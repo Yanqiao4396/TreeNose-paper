@@ -1,18 +1,27 @@
 \begin{abstract}
-    
-The file structure that produce this PDF are intended to be a starting point for
-your own paper.
-%
-It contains examples of how to structure figures and tables, and tips as to what
-to write in each section of the paper.
-%
-In the abstract, you should, as succinctly as possible, introduce the problem
-and your approach, and give an overview of the results of your empirical study.
-%
-End with some figures that summarise your results, and which give hard evidence
-of the benefits of your technique.
-%
-Note that some conferences and journals limit the number of words in an abstract
-to 200 or 250.
+
+A code smell is a code-design-related issue that can lead to the decrease
+in code quality, thereby hindering developers from reading or maintaining
+a software program. Code smell detection tools help developers by
+automatically checking the existence of code smells. Code smell detection
+tools have the potential to be language-independent, because common code
+smells occur in many different programming languages.
+A language-independent code smell detector can set unified detection rules
+across programming languages, which is especially useful in multi-language
+software development. However, few code smell detection tools support multiple
+programming languages. To fill the aforementioned gap, this paper presents a
+tool, called `TreeNose`, for detecting code smells across programming languages.
+`TreeNose` can detect 5 types of code smells across multiple languages
+(i.e., Python, Java, and JavaScript) and its extensible design enables it
+to support additional languages. This paper answers three research questions
+to explore the quality of `TreeNose` and behavioral patterns of code smells
+in different languages. In order to answer those questions, we evaluated
+`TreeNose` on 15 open-source projects implemented
+in the three chosen programming languages, comparing
+its results to those arising from the use of traditional language-specific
+code smell detectors. One of his paper’s key results is that `TreeNose` has a
+precision above 90\% for the chosen code smells and subject programs.
+The experimental results also reveal that code smells are language-independent,
+with varying prevalence in the studied programming languages.
 
 \end{abstract}
