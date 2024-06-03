@@ -14,42 +14,54 @@
 % the key point of what you want to get across in a leading comment, like this:
 
 % This section sets the stage for the paper
-This section should clearly explain the problem addressed by the paper, and give
-high level details of your approach for tackling it, explaining why no other
-paper already addresses the exact same problem.
 
-Like the abstract, it should provide a brief summary of the results of the
-paper, with some statistics if possible. If you can use some different
-statistics to the abstract, then that helps vary things for the reader.
+Code smells are a series of code-design-related defects. They decrease the
+readability \cite{5741260} and maintainability \cite{6392174} \cite{6405287} of software projects,
+which block the potential for the future maintenance \cite{Fowler_Beck}.
 
-Right before this section concludes, it should always feature a list of {\em
-contributions} that the paper makes. A contribution is a technical contribution
-to the research literature. What things does your paper show that no other paper
-does? Contributions are things like your approach/technique. One contribution
-can be the empirical evaluation and its results. Again, you may wish to
-highlight some key results here, with some numbers. In general, this part of the
-introduction should be written in the following format:
+Due to the negative impact of code smells on software projects,
+developers acknowledge the importance of detecting them. The manual detection in
+software projects is is an error-prone and resource-consuming process \cite{DetectingDefectsInObject}. 
+Therefore, code smell detection tools have been developed to automate this process.
+Different Code smell detection tools rely on various detection strategies,
+such as Abstract Syntax Tree (AST) Analysis, Machine Learning, and Static Analysis.
+Some of the popular code smell detection tools like PMD \cite{PMD} and CheckStyle \cite{CheckStyle}, have become one of the essential
+tools in the modern software development process.
 
-The contributions of this paper, therefore, are as follows:
+One of the characteristics of modern software projects is the use of multiple programming languages \cite{723183}. The combinations of
+programming languages allow developers to reply on functionalities and libraries that are not available in a single programming language.
+However, the complexity of multi-language software projects increases the difficulty of project comprehension and maintenance \cite{10.1109/SCAM.2012.11} \cite{7476675} \cite{7396422}.
+Along with the complexity, the multi-language software projects also introduce the challenge of code smell detection. 
+The existing code smell detection tools are designed to detect code smells in a single programming language. Therefore, developers have to configure multiple 
+code smell detection tools in multi-language software projects.
+
+On the other end of the spectrum, most code smells are language-independent. For example,
+the Long Method, one of the most prevalent code smells \cite{developersCare}, can exist in tons of programming languages.
+Due to the language-independence of code smells, code smell detection tools also have the potential to be language-independent.
+Emden and Moonen, the builders of the first code smell detection tool, indicated that their detection
+approach in Java can be applied to other programming languages \cite{1173068}. A language-independent code smell detection tool can
+provide universal detection experience for multi-language software projects. It can also avoid the overhead 
+of configuring multiple code smell detection tools with various detection approaches.
+
+In this paper, we present a language-independent code smell detection tool, named TreeNose, to detect 5 types of code smells, Complex Conditional, 
+Long Class, Long Method, Long Message Chain, Long Parameter List, across multiple programming languages.
+TreeNose implements tree-sitter \cite{treeSitter}, a general parser generator,
+to parse the source code of multiple programming languages into AST code structure nodes.
+TreeNose can traverse software projects and parse the source code of multiple programming languages 
+into AST code structure nodes. After unifying the tree-sitter language-specific nodes,
+TreeNose queries the unified nodes to detect targeted code smells with thresholds, which are configured by developers.
+TreeNose is designed to be highly extensible, allowing developers to add programming languages without rewriting source code.
+  
+To evaluate the accuracy of TreeNose,we evaluated TreeNose on 15 open-source projects
+implemented in the three chosen programming languages, comparing
+its results to those arising from the use of traditional language-specific
+code smell detectors. We also conducted evaluations on the characteristics 
+of code smells in different programming languages. 
+
+The key contributions of this paper are as follows:
 
 \begin{enumerate}
-
-\item Contribution 1. Longer description (including the section where the reader
-can find this contribution).
-
-\item Contribution 2. Longer description (including the section where the reader
-can find this contribution).
-
+    \item A language-independent code smell detecter that can detect 5 types of code smells across programming languages.
+    \item An evaluation of TreeNose to evaluate its accuracy in detecting code smells in multiple programming languages.
+    \item An experiment of TreeNose to reveal the prevalence and distribution of code smells in different programming languages.
 \end{enumerate}
-
-For example, an entry in this list might take the form:
-\begin{quote} \it The results of an empirical study showing the DOG algorithm
-outperforms the CAT algorithm with a 30\% improved fitness score
-(Section~\ref{sec:results}).
-\end{quote}
-
-Try to avoid concluding the introduction with a ``This paper is organized as
-follows\ldots'' paragraph, as they are rarely insightful!
-%
-However, you may want to include a sentence or two leading into the next section
---- Background.
