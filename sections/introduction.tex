@@ -15,44 +15,40 @@
 
 % This section sets the stage for the paper
 
-Code smells are a series of code-design-related defects. They decrease the
+Code smells are a series of code-design-related defects. They decrease
 readability \cite{5741260} and maintainability \cite{6392174} \cite{6405287} of software projects,
-which block the potential for the future maintenance \cite{Fowler_Beck}.
-
-Due to the negative impact of code smells on software projects,
+which block the potential for the future maintenance \cite{Fowler_Beck}. Due to the negative impact of code smells on software projects,
 developers acknowledge the importance of detecting them. The manual detection in
 software projects is is an error-prone and resource-consuming process \cite{DetectingDefectsInObject}. 
 Therefore, code smell detection tools have been developed to automate this process.
-Different Code smell detection tools rely on various detection strategies,
-such as Abstract Syntax Tree (AST) Analysis, Machine Learning, and Static Analysis.
-Some of the popular code smell detection tools like PMD \cite{PMD} and CheckStyle \cite{CheckStyle}, have become one of the essential
-tools in the modern software development process.
+Different code smell detection tools rely on various detection strategies,
+such as abstract syntax tree (AST) analysis, Machine Learning, and Static Analysis.
+Popular code smell detection tools, PMD \cite{PMD} and CheckStyle \cite{CheckStyle} for example,
+become one step of continuous integration in open-source software projects like Apache Commons Lang \cite{ApacheCommonsLang} and Jenkins \cite{Jekins}.
 
 One of the characteristics of modern software projects is the use of multiple programming languages \cite{723183}. The combinations of
-programming languages allow developers to reply on functionalities and libraries that are not available in a single programming language.
-However, the complexity of multi-language software projects increases the difficulty of project comprehension and maintenance \cite{10.1109/SCAM.2012.11} \cite{7476675} \cite{7396422}.
+programming languages allow developers to rely on functionalities and libraries that are not available in a single programming language.
+However, the complexity of multi-language software projects increases the difficulty of project comprehension and maintenance \cite{7476675, 10.1109/SCAM.2012.11, 7396422}.
 Along with the complexity, the multi-language software projects also introduce the challenge of code smell detection. 
 The existing code smell detection tools are designed to detect code smells in a single programming language. Therefore, developers have to configure multiple 
-code smell detection tools in multi-language software projects.
+code smell detection tools in multi-language software projects \cite{Jekins}.
 
-On the other end of the spectrum, most code smells are language-independent. For example,
-the Long Method, one of the most prevalent code smells \cite{developersCare}, can exist in tons of programming languages.
+While few code smell detection tools are language-independent, most code smells are. For example, the Long Method, one of the most prevalent code smells \cite{developersCare}, can exist in tons of programming languages.
 Due to the language-independence of code smells, code smell detection tools also have the potential to be language-independent.
 Emden and Moonen, the builders of the first code smell detection tool, indicated that their detection
-approach in Java can be applied to other programming languages \cite{1173068}. A language-independent code smell detection tool can
-provide universal detection experience for multi-language software projects. It can also avoid the overhead 
+approach in Java has the potential to be applied to other programming languages in the future \cite{1173068}. A language-independent code smell detection tool can
+provide a unified detection experience for multi-language software projects. It can also avoid the overhead 
 of configuring multiple code smell detection tools with various detection approaches.
 
-In this paper, we present a language-independent code smell detection tool, named TreeNose, to detect 5 types of code smells, Complex Conditional, 
+This paper present a language-independent code smell detection tool, named \texttt{TreeNose}, to detect 5 types of code smells, Complex Conditional, 
 Long Class, Long Method, Long Message Chain, Long Parameter List, across multiple programming languages.
-TreeNose implements tree-sitter \cite{treeSitter}, a general parser generator,
-to parse the source code of multiple programming languages into AST code structure nodes.
-TreeNose can traverse software projects and parse the source code of multiple programming languages 
-into AST code structure nodes. After unifying the tree-sitter language-specific nodes,
-TreeNose queries the unified nodes to detect targeted code smells with thresholds, which are configured by developers.
-TreeNose is designed to be highly extensible, allowing developers to add programming languages without rewriting source code.
+\texttt{TreeNose} implements Tree-sitter \cite{treeSitter}, a general parser generator,
+to parse the source code of multiple programming languages into the nodes of an AST. \texttt{TreeNose} can traverse software projects and parse the source code of multiple programming languages 
+into AST code structure nodes. After unifying the Tree-sitter language-specific nodes,
+\texttt{TreeNose} queries the unified nodes to detect targeted code smells with thresholds, which are configured by developers.
+\texttt{TreeNose} is designed to be highly extensible, allowing developers to add programming languages without rewriting source code.
   
-To evaluate the accuracy of TreeNose,we evaluated TreeNose on 15 open-source projects
+To evaluate the accuracy of \texttt{TreeNose},we evaluated \texttt{TreeNose} on 15 open-source projects
 implemented in the three chosen programming languages, comparing
 its results to those arising from the use of traditional language-specific
 code smell detectors. We also conducted evaluations on the characteristics 
@@ -61,7 +57,7 @@ of code smells in different programming languages.
 The key contributions of this paper are as follows:
 
 \begin{enumerate}
-    \item A language-independent code smell detecter that can detect 5 types of code smells across programming languages.
-    \item An evaluation of TreeNose to evaluate its accuracy in detecting code smells in multiple programming languages.
-    \item An experiment of TreeNose to reveal the prevalence and distribution of code smells in different programming languages.
+    \item A language-independent code smell detecter that detects 5 types of code smells across programming languages.
+    \item An evaluation of \texttt{TreeNose} to evaluate its accuracy in detecting code smells in multiple programming languages.
+    \item An experiment to reveal the prevalence and distribution of code smells in different programming languages.
 \end{enumerate}
