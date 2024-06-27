@@ -49,6 +49,8 @@ To answer the RQ1, we compared \texttt{TreeNose} with 3 language-specific code s
 (Python), Jscent (JavaScript), and DesigniteJava (Java).
 All 3 code smell detectors are language-specific AST-based code smell detection tools 
 that are open-source, where Pysmell was proven to achieve 97.7\% precision in a study.
+In the experiment, we compared TreeNose with the combination of the other tools.
+The combination of the other tools mimic the scenario where developers utilize multiple code smell detectors to detect language-specific code smells in multi-language systems.
 Those detectors support most code smells detected by \texttt{TreeNose}, allowing us to implement them in the same sets of projects with \texttt{TreeNose} to compare their performances.
 To quantify the performance of \texttt{TreeNose} and the other tools, we adopted precision and recall, which are defined as follows:
 
@@ -133,14 +135,17 @@ definitions of the selected code smells. We noted that different code smell dete
 different metrics and thresholds to detect the same code smell. Therefore, the metrics of \texttt{TreeNose} may not be consistent with the other tools.
 As a result, the selection of metrics and thresholds in \texttt{TreeNose} may not be optimal for detecting selected code smells.
 To mitigate the threats, we conducted an annotation study with 2 developers to evaluate the performance of \texttt{TreeNose} in detecting code smells.
-Another treats is related to the annotation study. To evaluate the performance of \texttt{TreeNose},
+
+Another treat is related to the annotation study. To evaluate the performance of \texttt{TreeNose},
 we conducted an annotation study with 2 developers. Due to the limited number of developers in the study, the results may not be 
 generalizable to all developers. We also noted that the amount of subjects and samples are limited in the study. Though we ensured the subjects are actively used and well-maintained, 
 the results may still not be generalizable to all software projects. 
 To mitigate the threats, we plan to conduct more studies with more developers and subjects in the future.
+
 The third threat is related to the limitation of the selected code smell detectors. They didn't detect all the selected code smells,
 and the results may be biased by the missing code smells. To mitigate the threats, 
 we plan to implement more code smell detectors in the future to compare the performance of \texttt{TreeNose} with more detectors.
+
 The last threat is due to our decision of including the test code in the analysis. Test code is important for developers to comprehend and maintain,
 but it may have different conventions and styles from the source code. Therefore, the same thresholds and metrics of TreeNose may not be optimal for the test code.
 To mitigate the threats, we plan to conduct more studies with separate analysis of the source code and test code in the future.
