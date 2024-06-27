@@ -1,10 +1,5 @@
-% Tables should be placed at the top of pages/columns
-% where they can.
-%
-% This can be ensured by using the [t] parameter to the
-% "\begin{table}" declaration.
-%
-\begin{table}[t]
+
+\begin{table*}[h]
     % Figures should be centered in the page/column
     \centering
     %
@@ -17,9 +12,9 @@
         % table's label should be the same as the filename, as it is
         % in this example:
         %
-        \label{tab:metrics-and-thresholds}
+        \label{tab:annotation_table}
         %
-        Metric-based Criteria for TreeNose
+        CONFUSION MATRIX FOR TREENOSE AND OD FROM ANNOTATION STUDY
     }
     %
     % Depending on the template, some breathing space might need to
@@ -44,14 +39,24 @@
     %
     % For example:
     %
-    \begin{tabular}{lll}
+    \renewcommand{\arraystretch}{1.2}
+    % \rowcolors{2}{gray!25}{white}
+    \begin{tabular}{@{}lrrrrrr@{}}
         \toprule
             % use a new line for each column if needed
-            {\bf Code Smell} 
+            {\bf }
             &
-            {\bf Criteria}  
+            {\bf TN Precision} 
             &
-            {\bf Metrics}
+            {\bf OD Precision}  
+            &
+            {\bf TN Recall}
+            &
+            {\bf OD Recall}
+            &
+            {\bf TN F1}
+            &
+            {\bf OD F1}
             \\
 
 
@@ -62,10 +67,12 @@
         % as to why)
         
         \bottomrule
-        \input table-data/results
+        \input table-data/annotation_data
+
     \end{tabular}
+
     %
     % To save space, you might want to remove space here (use a negative
     % \vspace, e.g. \vspace{-1em})
     \vspace{-1em}
-\end{table}
+\end{table*}

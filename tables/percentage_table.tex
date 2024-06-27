@@ -1,0 +1,78 @@
+
+\begin{table*}[t]
+    % Figures should be centered in the page/column
+    \centering
+    %
+    \caption{
+        % The label should appear _inside_ the caption to ensure
+        % Latex numbers it correctly. This is a common gotcha!
+        %
+        % All table labels should start with "tab:"
+        % So that the figure file can be found easily, the rest of the
+        % table's label should be the same as the filename, as it is
+        % in this example:
+        %
+        \label{tab:percentage_table}
+        %
+        PERCENTAGE OF CODE SMELLS IN PROGRAMMING LANGUAGE SYSTEMS
+    }
+    %
+    % Depending on the template, some breathing space might need to
+    % be added (use \smallskip \medskip etc.) here
+    %
+    % Or, to save space, you might want to remove space
+    % (use a negative \vspace, e.g. \vspace{-1em})
+    %
+    %
+    % Table content goes here. Use this file to specify the
+    % table's column headings. The data should be automatically
+    % output from a program processing the raw experimental data
+    % and should be inputted from another file. This enables
+    % the data to change, if for example, the experiment data
+    % needs to be updated.
+    %
+    % Do not use vertical rules. Ensure you use \toprule, \midrule
+    % and \bottomrule from the "booktabs" package effectively.
+    %
+    % Numbers should be right justified (use "r"),
+    % text left justified (use "l").
+    %
+    % For example:
+    %
+    \renewcommand{\arraystretch}{1.2}
+    % \rowcolors{2}{gray!25}{white}
+    \begin{tabular}{@{}lrrrrrrr@{}}
+        \toprule
+            % use a new line for each column if needed
+            {\bf }
+            &
+            {\bf CC} 
+            &
+            {\bf LC}  
+            &
+            {\bf LM}
+            &
+            {\bf LMC}
+            &
+            {\bf LPL}
+            &
+            {\bf Total}
+            \\
+
+
+
+        % Now input the data file Note the filename should not have curly
+        % brackets, otherwise latex will generate a warning (see
+        % https://tex.stackexchange.com/questions/567985/problems-with-inputtable-tex-hline-after-2020-fall-latex-release
+        % as to why)
+        
+        \bottomrule
+        \input table-data/percentage_data
+
+    \end{tabular}
+
+    %
+    % To save space, you might want to remove space here (use a negative
+    % \vspace, e.g. \vspace{-1em})
+    \vspace{-1em}
+\end{table*}
