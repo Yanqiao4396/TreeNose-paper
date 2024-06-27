@@ -1,7 +1,9 @@
+
+\input{tables/percentage_table}
 \section{Results}
 \label{sec:results}
 
-In this section, we present the results of our evaluation. To avoid redundancy, we combined the evaluation data of the RQ2 and the RQ3 into a single table.
+In this section, we present the results of our evaluation.
 
 
 Table~\ref{tab:annotation_table} shows the confusion matrixes of \texttt{TreeNose} and the other tools in the annotation study. TN represents \texttt{TreeNose}, and OD represents the other tools.
@@ -11,23 +13,20 @@ When there is no value in the table, it means it's not possible to calculate the
 \texttt{TreeNose} flagged all the positive when we selected samples from the \texttt{TreeNose} detection. Therefore, it's not
 possible to calculate the recall or the F1 score of \texttt{TreeNose} in this environment. The same applies to the OD-selected samples.
 Another interesting observation is that the OD group achieves 1.0 precision in the \texttt{TreeNose}-selected samples, but the recall is down to 0.32,
-which results in a low F1 score of 0.48. This indicates that the OD group is not able to detect all the code smells in the \texttt{TreeNose}-selected samples.
+which results in a low F1 score of 0.48. This indicates that the OD group can hardly detect all the code smells in the \texttt{TreeNose}-selected samples.
 
 Table~\ref{tab:percentage_table} discloses the percentage of the code smells in each programming language system. Looking at the table, we can see Complex Conditional (CC)
-counts for almost 1/3 of the code smells in each system, indicating that it is the most common code smell across programming languages. 
-Long Class (LC) and Long Method (LM) behave differently in the Java and JavaScript systems. In the Java system,
-LC occurs 30 times more than LM, while in the JavaScript system it's the opposite, LM occurs 10 times more than LC. This indicates that the programming languages
-have different tendencies in terms of code smells.
-
-Table~\ref{tab:occurrence_table} shows the occurrence discrepancy scores of the code smells in the systems. It indicates that no programming language outperforms the others in every code smell,
-meaning that each programming language has its own strengths and weaknesses in terms of code smells. For example, Java has the highest score in the LM (Long Method) code smell,
- while Python has the highest score in the LMC (Long Message Chain) code smell. We also learned that certain code smells significantly vary in occurrence across programming languages.
- Especially, Java performs 3 times worse than the other programming languages in the LC (Long Class) code smell. 
- This is aligned with the result from Table~\ref{tab:percentage_table}., where we observed that the LC code smell is the most common code smell in the Java system.
-
-
-\input{tables/annotation_table}
-
-\input{tables/percentage_table}
+counts for 42\% of code smells on average, indicating that it is the most common code smell across programming languages. 
+the percentage of Long Class (LC) and Long Method (LM) vary significantly in the Java and JavaScript systems. In the Java system,
+LC occurs 10 times more than LM, while in the JavaScript system it's the opposite, LM occurs 30 times more than LC. 
+This indicates that the programming languages have huge different tendencies in terms of code smells.
 
 \input{tables/occurrence_table}
+
+Table~\ref{tab:occurrence_table} shows the occurrence discrepancy scores of the code smells in the systems. Since no programming language contains positive values in every code smell, 
+we conclude no programming language outperforms the others in every code smell.
+By looking at each code smell, we also see programming languages have strong tendencies in some code smells with at least 1 time worse performance than others. 
+For example, the Java system has a strong tendency in the Long Class (LC) with 3 times worse performance than others, 
+while the JavaScript system has a strong tendency in the Long Method (LM) code smell. Python has a strong tendency in the Long Parameter List (LPL).
+Multi-Language system, on the other hand, has weaker tendencies in code smells compared to the other systems with zero negative values less than - 1.0.
+

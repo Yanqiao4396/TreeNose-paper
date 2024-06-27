@@ -1,3 +1,5 @@
+
+
 \section{Evaluation}
 \label{sec:evaluation}
 
@@ -26,6 +28,7 @@ programming languages. They should be actively used and contain a large amount o
 experiments are 1. have commits on main branch in the last year, 2. have at least 10 thousands lines of code (KLOC), and 3. have more than 1,000 stars on GitHub.
 . Within those constraints, we selected 3 subjects for each programming language, Java, JavaScript, and Python, respectively.
 Table~\ref{tab:subject_table} shows the characteristics of the subjects. All the subjects have been proven to have commits on main branch in the last year.
+Though TreeNose both Python 2 and 3, Pysmell only supports Python 2 and therefore all the selected subjects in Python are written in Python 2.
 And as for the contents of those projects, we decided to include both source code and test code in the analysis, 
 it's because the test code is also important for developer to comprehend and maintain in software development.
 
@@ -85,11 +88,10 @@ To answer the RQ2 and RQ3, we implemented \texttt{TreeNose} in up to 20 open-sou
  Analyzing the code smell reports of \texttt{TreeNose} helps to understand the distribution and prevalence of the selected 
  code smells in different programming languages, and furthermore the target languages' tendencies to contain specific code smells.
 
- To minimize the bias introduced by the different sizes of the projects in the RQ2 and the RQ3, we calculate the number of each code smell in individual 
+ To minimize the bias introduced by the different sizes of the projects in the RQ2, we calculate the number of each code smell in individual 
 projects ($s_{k}$) and divide it by the total number of code smells in that project ({$S$}) to calculate the project-level percentage of the code smell. 
 Then we the sum of the project-level percentages in the projects in the language, 
 and divide it by the number of the projects in the language ($NOP$) to calculate the percentage of the code smell in the language ($P_{k}$).
-The formula is as follows:
 
 In the experiment of the RQ2, we calculate the percentage of each code smell out of all the selected code smells as follows:
 
@@ -99,7 +101,7 @@ In the experiment of the RQ2, we calculate the percentage of each code smell out
 
 As for the RQ3, we would like to quantify the prevalence of the code smells as the occurrence of the code smells in each 1000 lines of code on average ($C_{s}$).
 to calculate it, we divide the number of each code smell in individual projects ($s_{k}$) by the total number of lines in the project ($NOL_{k}$) 
-to calculate the project-level percentage of the code smell ($s_{k}$),
+to calculate the project-level prevalence of the code smell,
 and then take the average of the occurrences in each project. Finally by taking the average of the occurrences in the projects in the language, 
 we calculate the prevalence of the code smell in the language as follows:
 
@@ -107,7 +109,7 @@ we calculate the prevalence of the code smell in the language as follows:
     C_{s} = \frac{\sum_{1}^{k}{\frac{s_{k}}{NOL_{k}}}}{NOP}
 \end{equation}
 
-With the prevalence score ($C_{s}$), we want to quantify how much one language outperforms the others in terms of the prevalence of the code smells.
+With the prevalence score $C_{s}$, we want to quantify how much one language outperforms the others.
 Therefore, we utilized the discrepancy formula to calculate the occurrence discrepancy score. we compared the occurrence of one language ($C_{s}$) against the same code smell in the combination of the other programming languages ($C_{O}$).
 we calculate the occurrence discrepancy score (D) of each code smell in the projects as follows:
 
@@ -116,17 +118,31 @@ we calculate the occurrence discrepancy score (D) of each code smell in the proj
 \end{equation}
 
 In this equation, a positive score indicates that the code smell occurs less frequently in the language than the other languages, while a negative score indicates that the code smell occurs more frequently in the language than the other languages.
-It's noteworthy that the discrepancy score has a range of negative infinity to 1, where 1 means the code smell doesn't occur in the language at all, and 0 means the code smell occurs in the language as frequently as the other languages.
+The discrepancy score has a range of negative infinity to 1, where 1 means the code smell doesn't occur in the language at all, and 0 means the code smell occurs in the language as frequently as the other languages.
+
+\input{tables/annotation_table}
+
+
+
 
 \subsection{Threats to Validity}
 \label{sec:threats-to-validity}
 
 The definition of code smell, code that is hard to comprehend or maintain, subjective. Therefore, one of concerns in this research is on the
-definitions of the selected code smells. We noted that different code smell detection tools may utilize 
+definitions of the selected code smells. We noted that different code smell detection tools utilize 
 different metrics and thresholds to detect the same code smell. Therefore, the metrics of \texttt{TreeNose} may not be consistent with the other tools.
 As a result, the selection of metrics and thresholds in \texttt{TreeNose} may not be optimal for detecting selected code smells.
-There may be developers not agree with the results of \texttt{TreeNose}, which leads to our second threats to validity. To evaluate the performance of \texttt{TreeNose},
+To mitigate the threats, we conducted an annotation study with 2 developers to evaluate the performance of \texttt{TreeNose} in detecting code smells.
+Another treats is related to the annotation study. To evaluate the performance of \texttt{TreeNose},
 we conducted an annotation study with 2 developers. Due to the limited number of developers in the study, the results may not be 
 generalizable to all developers. We also noted that the amount of subjects and samples are limited in the study. Though we ensured the subjects are actively used and well-maintained, 
 the results may still not be generalizable to all software projects. 
 To mitigate the threats, we plan to conduct more studies with more developers and subjects in the future.
+The third threat is related to the limitation of the selected code smell detectors. They didn't detect all the selected code smells,
+and the results may be biased by the missing code smells. To mitigate the threats, 
+we plan to implement more code smell detectors in the future to compare the performance of \texttt{TreeNose} with more detectors.
+The last threat is due to our decision of including the test code in the analysis. Test code is important for developers to comprehend and maintain,
+but it may have different conventions and styles from the source code. Therefore, the same thresholds and metrics of TreeNose may not be optimal for the test code.
+To mitigate the threats, we plan to conduct more studies with separate analysis of the source code and test code in the future.
+
+
