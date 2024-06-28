@@ -1,24 +1,25 @@
-\section{Background}
+\section{Background and Related Work}
 \label{sec:background}
 
-The background section introduces past work (by you and others) that the reader
-needs to know to understand the rest of your paper.
-%
-It is different from the ``Related Work'' section,
-% Always reference sections like this, i.e. with a capital letter on "Section",
-% followed by a non-breaking space (the ~ character), which keeps the word
-% "Section" and the following number on teh same line.
-Section~\ref{sec:related-work}, in which you should cite work related to your
-paper, but which is not integral to the basis of your approach.
+Code smell origins from the book \textit{Refactoring} by Martin Fowler and Kent Beck \cite{Fowler_Beck}.
+Since then, this concept has been widely adopted by the software engineering community. The community has
+defined more specific code smells \cite{Pysmell} \cite{CleanCode} \cite{SQLAntipatterns} 
+\cite{RefactoringWorkbook} to describe the issues in software development. Jerzyk, recently, built
+an online code smell catalog with 56 common code smells \cite{Jerzyk2023}.
+At the same time, community was also exploring the characteristics of code smells. Yamashita 
+conducted several empirical studies to investigate the effects of code smells on maintainability \cite{6405287} \cite{6392174}. She
+also conducted another study to discover developers' opinion of code smells \cite{developersCare}, where 
+she found the top 15 most common code smells in developers' perception. Researchers, like Tufano \cite{whenandwhy} and Peters \cite{lifespan}, conducted the studies to
+discover the characteristics of code smells in lifespan of software projects. Santana, Cruz, and, Figueiredo found the
+strong agglomerations of certain code smells highly occur in software projects \cite{Santana}. Pascarella found active code reviews significantly reduce the severity of code smells \cite{Pascarella}.
 
-Think of it as content behind the ``{\tt import}'' statements of a program. What
-is the minimal information that the reader needs to know to understand your
-technique? (What would correspond to the libraries that you would ``{\tt
-import}'' if it were a computer program?
 
-Everything else can go in ``Related Work''. Don't put everything in this
-section, ``Background'' because it will make your work sound more derivative and
-will delay the reader before getting to the part you want to grandstand, which
-is your method, in the next secion, called ``Approach''.
+Because of the negative impact of code smells on software projects, developers acknowledge the importance of detecting them. The manual code smell detection was proven to be
+error-prone and resource-consuming \cite{DetectingDefectsInObject-orientedDesigns}. Therefore, code smell detection tools have been developed to automate this process.
+Different code smell detection tools rely on various detection strategies, such as abstract syntax tree (AST) analysis, Machine Learning, and Static Analysis.
+Emden and Moonen built the first code smell detection tool in Java \cite{1173068}. Since then,
+many language-specific code smell detection tools have been developed, such as PMD \cite{PMD} and CheckStyle \cite{CheckStyle}.
+Chen \cite{Pysmell} built a code smell detection tool in Python targeting on Python specific code smells.
+All the tools mentioned above rely on AST to detect code smells. There are also developers who use Machine Learning. 
+For example, Pontillo utilized Machine Learning to detect test smells, similar to code smell, to achieve better performance than heuristic-based techniques, but had a challenge of overcoming F1 score of 0.51.
 
-\input{figures/plain-figure}
