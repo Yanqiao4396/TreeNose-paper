@@ -1,6 +1,15 @@
 \section{Background and Related Work}
 \label{sec:background}
 
+\subsection{Multi-Language System}
+\label{sec:Multi-Language System}
+
+It's one feature of modern software development to use multiple programming languages \cite{723183}.
+Developers utilize multiple programming languages to leverage their strengths \cite{7476675}.
+
+
+\subsection{Code Smells}
+\label{sec:Code Smells}
 Code smell origins from the book \textit{Refactoring} by Martin Fowler and Kent Beck \cite{Fowler_Beck}.
 Since then, this concept has been widely adopted by the software engineering community. The community has
 defined more specific code smells \cite{Pysmell} \cite{CleanCode} \cite{SQLAntipatterns} 
@@ -13,13 +22,23 @@ she found the top 15 most common code smells in developers' perception. Research
 discover the characteristics of code smells in lifespan of software projects. Santana, Cruz, and, Figueiredo found the
 strong agglomerations of certain code smells highly occur in software projects \cite{Santana}. Pascarella found active code reviews significantly reduce the severity of code smells \cite{Pascarella}.
 
-
+\subsection{Code Smell Detection}
+\label{sec:Code Smell Detection}
 Because of the negative impact of code smells on software projects, developers acknowledge the importance of detecting them. The manual code smell detection was proven to be
 error-prone and resource-consuming \cite{DetectingDefectsInObject-orientedDesigns}. Therefore, code smell detection tools have been developed to automate this process.
 Different code smell detection tools rely on various detection strategies, such as abstract syntax tree (AST) analysis, Machine Learning, and Static Analysis.
-Emden and Moonen built the first code smell detection tool in Java \cite{1173068}. Since then,
+Van Emden and Moonen built the first code smell detection tool in Java \cite{1173068}. Since then,
 many language-specific code smell detection tools have been developed, such as PMD \cite{PMD} and CheckStyle \cite{CheckStyle}.
 Chen \cite{Pysmell} built a code smell detection tool in Python targeting on Python specific code smells.
-All the tools mentioned above rely on AST to detect code smells. There are also developers who use Machine Learning. 
+All the tools mentioned above rely on AST to detect code smells. Except AST-based detection, There are also developers utilizing Machine Learning and textual components. 
 For example, Pontillo utilized Machine Learning to detect test smells, similar to code smell, to achieve better performance than heuristic-based techniques, but had a challenge of overcoming F1 score of 0.51.
+Palomba el al. designed a text-based code smell technique to detect code smells and found the benefits of combining textual and structural information in code smell detection \cite{Palomba}.
+\subsection{Code Smell in Multi-Language System}
+\label{sec: Code Smell in Multi-Language System}
+
+Common code smells are broadly recognized across programming languages \cite{Pysmell,PMD,CheckStyle,Jscent,DesigniteJava}. 
+There are also researchers who have conducted studies to investigate code smells in multi-language systems.
+Abidi et al. defined 12 multi-language design smells (i.e., code smells and anti-patterns) \cite{MultiLanguageCodeSmells}. They discovered that multi-language code smells commonly raise during the maintenance and refactoring activities
+ and have a strong negative impact on software quality \cite{Abidi2}. They also built a multi-system code smell detection tool with srcML (a multi-language parsing tool to convert source code into XML), to
+ detect design smells in multi-language systems. They suggested that multi-language design smells are prevalent in multi-language systems and have a strong negative impact on software readability \cite{Fault-Prone}.
 
