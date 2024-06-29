@@ -1,6 +1,6 @@
 \begin{abstract}
 
-A code smell is a code-design-related issue that can lead to decrease
+A code smell is a code-design issue that can lead to decrease
 in code quality, thereby hindering developers from reading or maintaining
 a software program. Code smell detection tools help developers by
 automatically checking the existence of code smells. Code smell detection
@@ -16,12 +16,15 @@ tool, called \texttt{TreeNose}, for detecting code smells across programming lan
 to support additional languages. This paper answers three research questions
 to explore the quality of \texttt{TreeNose} and structural patterns of code smells
 in different languages. In order to answer those questions, we evaluated
-\texttt{TreeNose} on 15 open-source projects implemented
-in the three chosen programming languages, comparing
+\texttt{TreeNose} on 16 open-source projects implemented
+in the three chosen programming languages and the combinations of those languages, comparing
 its results to those arising from the use of traditional language-specific
-code smell detectors. One of his paper’s key results is that \texttt{TreeNose} has a
-precision above 90\% for the chosen code smells and subject programs.
-The experimental results also reveal that code smells are language-independent,
-with varying prevalence in the studied programming languages.
+code smell detectors in an manual annotation study. 
+As a result, \texttt{TreeNose} has a
+precision above 92\% for the selected code smells in the chosen systems.
+The experimental results also revealed that Complex Conditional code smell with 43 percentage  on average
+is the most common code smell among selected code smells. Finally, we found that
+programming languages have strong tendencies
+to have specific code smells.
 
 \end{abstract}

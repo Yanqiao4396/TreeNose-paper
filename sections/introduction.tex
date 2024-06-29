@@ -35,23 +35,23 @@ code smell detection tools in multi-language software projects \cite{Jekins}.
 
 While few code smell detection tools are language-independent, most code smells are. For example, the Long Method, one of the most prevalent code smells \cite{developersCare}, can exist in tons of programming languages.
 Due to the language-independence of code smells, code smell detection tools also have the potential to be language-independent.
-Emden and Moonen, the builders of the first code smell detection tool, indicated that their detection
-approach in Java has the potential to be applied to other programming languages in the future \cite{1173068}. A language-independent code smell detection tool can
+Van Emden and Moonen, the builders of the first code smell detection tool, indicated that their detection
+approach in Java has the potential to be applied to other programming languages in the future \cite{1173068}.
+Abidi Et al. built a language-independent design smells (i.e., anti-patterns and code smells) detection tool to detect 15 multi-language-specific
+design smells in Java and C/C++ \cite{MultiLanguageCodeSmells} \cite{Fault-Prone}. A language-independent code smell detection tool can
 provide a unified detection experience for multi-language software projects. It can also avoid the overhead 
 of configuring multiple code smell detection tools with various detection approaches.
 
 This paper present a language-independent code smell detection tool, named \texttt{TreeNose}, to detect 5 types of code smells, Complex Conditional, 
 Long Class, Long Method, Long Message Chain, Long Parameter List, across multiple programming languages.
-\texttt{TreeNose} implements Tree-sitter \cite{treeSitter}, a general parser generator,
-to parse the source code of multiple programming languages into the nodes of an AST. \texttt{TreeNose} can traverse software projects and parse the source code of multiple programming languages 
-into AST code structure nodes. After unifying the Tree-sitter language-specific nodes,
-\texttt{TreeNose} queries the unified nodes to detect targeted code smells with thresholds, which are configured by developers.
+\texttt{TreeNose} implements TreeSitter \cite{treeSitter}, a general parser generator,
+to parse the source code of multiple programming languages into the nodes of AST. On top of AST, \texttt{TreeNose} queries the nodes with detection rules to detect targeted code smells with thresholds, which are configured by developers.
 \texttt{TreeNose} is designed to be highly extensible, allowing developers to add programming languages without rewriting source code.
   
-To evaluate the accuracy of \texttt{TreeNose},we evaluated \texttt{TreeNose} on 15 open-source projects
-implemented in the three chosen programming languages, comparing
-its results to those arising from the use of traditional language-specific
-code smell detectors. We also conducted evaluations on the characteristics 
+To evaluate the accuracy of \texttt{TreeNose},we evaluated \texttt{TreeNose} on 9 open-source projects
+implemented in Java, JavaScript, or Python. We compared the performance of \texttt{TreeNose} with the combination of 3 language-specific code smell detection tools 
+in a manual annotation study.
+We also conducted evaluations on the characteristics 
 of code smells in different programming languages. 
 
 The key contributions of this paper are as follows:
@@ -61,3 +61,8 @@ The key contributions of this paper are as follows:
     \item An evaluation of \texttt{TreeNose} to evaluate its accuracy in detecting code smells in multiple programming languages.
     \item An experiment to reveal the prevalence and distribution of code smells in different programming languages.
 \end{enumerate}
+
+Our results show that \texttt{TreeNose} achieved high precision of 92\% and F1 score of 0.94 in detecting selected code smells in target programming languages.
+We also found (1) Complex Conditional counts for 42\% of the total code smells detected on average, which is the most common code smell in the programming languages we evaluated.
+(2) Programming languages have strong tendencies to have specific code smells, such as JavaScript contains 3 times more Long Method than other systems.
+(3) Multi-Language software projects have less tendencies in code smells than single-language software projects.
