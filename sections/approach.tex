@@ -1,7 +1,7 @@
 \section{Approach}
 \label{sec:approach}
 
-This chapter resolves 2 questions: 1. what's the definitions of list of code smells that \texttt{TreeNose} will detects, 
+This chapter resolves 2 questions: 1. what are the definitions of the code smells that \texttt{TreeNose} detects, 
 and 2. what's the approach that \texttt{TreeNose} uses to detect code smells across multiple programming languages.
 
 
@@ -18,8 +18,8 @@ Among them, we selected 5 code smells that occur across multiple programming lan
 \textbf{Complex Conditional (CC)} \cite{Fowler_Beck}: this smell occur when a conditional clause contains too many conditions, 
 such as nested if-else statements, and enormous switch-case statements. This smell makes the code hard to read and maintain on logic level.
 
-\textbf{Long Class (LC)} \cite{Fowler_Beck}: a class handles too much work. Normally it occurs with too many fields. Or a class has too many lines because of 
-the extremely long fields. 
+\textbf{Long Class (LC)} \cite{Fowler_Beck}: a class handles too much work. Normally it occurs with too many properties. Or a class has too many lines because of 
+the extremely long properties. 
 
 \textbf{Long Method (LM)} \cite{Fowler_Beck}: a method grows too long. Normally it occurs with too many lines of code. The longer a method is, the harder it is to understand the procedure.
 
@@ -31,30 +31,28 @@ the extremely long fields.
 \subsection{Detection Procedure}
 \label{sec:Detection Procedure}
 
-\texttt{TreeNose} adopts the AST-based approach to detect code smells. The Fig.~\ref{fig:architecture} discloses the architecture of \texttt{TreeNose}.
-\texttt{TreeNose} executes 3 steps to detect target code smells. 1. Extract source code from the project, 2. Parse the source code to AST, 3. Analyze the AST to detect code smells.
+\texttt{TreeNose} adopts AST-based approach to detect code smells. The Fig.~\ref{fig:architecture} discloses the architecture of \texttt{TreeNose}.
+\texttt{TreeNose} executes 3 steps to detect target code smells. 1. Extract source code from the project, 2. Parse the source code to AST, 3. Analyze AST to detect code smells.
 
 
-\textbf{Step 1: Extract Source Code}: \texttt{TreeNose} extracts recursively extract source code matching with the target programming language from the project. During this procedure, \texttt{TreeNose} fetches
+\textbf{Step 1: Extract Source Code}: \texttt{TreeNose} recursively extracts source code matching with the target programming language from the project. During this procedure, \texttt{TreeNose} fetches
 all target files unless the file or the path is in the ignore list.
 
 \textbf{Step 2: Parse Source Code to AST}: \texttt{TreeNose} parses the source code to AST with TreeSitter \cite{treeSitter}. 
-TreeSitter is a parser generator tool that generates AST in multiple programming languages. 
-It decouples the parser from the language grammar, making it possible to parse the source code in 
-multiple programming languages with the same parser. \texttt{TreeNose} uses the TreeSitter parser to parse the source code 
-to AST.
+TreeSitter is a parser generator tool that generates AST in multiple programming languages. It currently supports 18 language bindings. 
+TreeSitter decouples the parser from the language grammar, making it possible to parse the source code in 
+multiple programming languages.
 
-\textbf{Step 3: Analyze AST to Detect Code Smells}: \texttt{TreeNose} analyzes the AST to detect code smells.
-Before the analysis, our developers categorize the similar AST nodes like method and function across programming 
+\textbf{Step 3: Analyze AST to Detect Code Smells}: \texttt{TreeNose} analyzes AST to detect code smells.
+Before the analysis, our developers categorize the language-specific TreeSitter AST nodes like method and function across programming 
 languages into language-independent groups. This categorization enables \texttt{TreeNose} to execute the same detection process 
-for the same language-independent group across multiple programming languages.
-During this analysis, \texttt{TreeNose} queries the AST and searches for associated AST components within the associated group.
-When locating the target component, \texttt{TreeNose} calculates the detection metrics against the detection thresholds to make a decision.
+for nodes in the same group across multiple programming languages.
+During the analysis, \texttt{TreeNose} queries AST and searches for the associated components in AST.
+When locating the components, \texttt{TreeNose} calculates the metrics against the thresholds.
+Table~\ref{tab:metrics-and-thresholds} shows the detection metrics with default thresholds for each code smell.
 Finally, \texttt{TreeNose} generates reports with the list of code smells detected in the project.
 % Always reference figures like you would reference sections as demonstrated in
 % the sections/background.tex
 
-With customized detection thresholds, \texttt{TreeNose} verifies the AST parsed from source code against the detection metrics. 
-Table~\ref{tab:metrics-and-thresholds} shows the detection metrics with default thresholds for each code smell.
 
 \input{tables/metric_table}
