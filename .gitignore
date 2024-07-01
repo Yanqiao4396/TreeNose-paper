@@ -20,3 +20,6 @@
 
 # EDITOR
 .vscode
+
+# GENERATED PDF
+*.pdf
