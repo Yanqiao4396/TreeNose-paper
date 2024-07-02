@@ -5,7 +5,7 @@
     % software program.
     %
     Code smell detection tools help developers by automatically checking for the
-    existence of these code anti-pattern that can compromise code quality.
+    existence of code anti-patterns that can compromise code quality.
     %
     % Code smell detection tools have the potential to be language-independent,
     % because common code smells occur in many different programming languages.
@@ -14,27 +14,35 @@
     % multi-language software development. % However, few code smell detection
     % tools support multiple programming languages.
     %
-    Despite both the prevalence of common code smells across various programming
-    languages and the need for tools that consistently perform code smell detection
-    for both multiple- and single-language projects, there is a noticeable lack of
-    such tools that support multiple programming languages.
-    %
+    Despite the prevalence of common code smells across various programming
+    languages, there is a noticeable the need for such tools that consistently 
+    perform code smell detection
+    for both multiple- and single-language projects.
+    %    Despite both the prevalence of common code smells across various programming
+    % languages and the need for tools that consistently perform code smell detection
+    % for both multiple- and single-language projects, there is a noticeable lack of
+    % such tools that support multiple programming languages.
+
     Filling the aforementioned gap, this paper presents a tool, called
     \texttt{TreeNose}, that uses well-established Treesitter source code parsers to
     detect code smells across programming languages.
     The presented tool automatically finds 5 types of code smells across 3
     languages (i.e., Python, Java, and JavaScript) and its adoption of Treesitter
-    parsers enables future extension.
+    parsers enables future extensions.
     This paper answers three research questions to explore \texttt{TreeNose}'s
     effectiveness and to characterize the manifestation of code smells in different
     languages.
-    We applied \texttt{TreeNose} to 16 open-source projects implemented in the 3
-    chosen languages and the combinations of those languages, comparing its results
+    We applied \texttt{TreeNose} to 9 open-source projects implemented in the 3
+    chosen languages, comparing its results
+    % We applied \texttt{TreeNose} to 16 open-source projects implemented in the 3
+    % chosen languages and the combinations of those languages, comparing its results
     to those arising from the use of traditional, language-specific code smell
     detectors in a manual annotation study.
     These results showed that \texttt{TreeNose}'s classifications lead to an
     F1-score of 0.94.
-    The experiments also revealed that the Complex Conditional smell comprises
+    The following experiments within 16 systems in the 3 selected languages and the combinations of them,
+    revealed that the Complex Conditional smell comprises
+    % The experiments also revealed that the Complex Conditional smell comprises
     between 32\% and 51\% of the detected \mbpx{code smells}.
     We also discovered that Long Method smells make up 38\% of all those detected
     for JavaScript programs and Long Class smells constitute 30\% of those found in
