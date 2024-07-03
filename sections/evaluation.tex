@@ -1,4 +1,6 @@
-\section{Evaluation}~\label{sec:evaluation}
+\section{Experimental Evaluation}~\label{sec:evaluation}
+
+\vspace*{-1em}
 
 To evaluate the performance of \texttt{TreeNose} in different programming
 language systems, we implemented \texttt{TreeNose} in 9 large open-source
@@ -24,18 +26,20 @@ languages.
 to evaluate the prevalence of the selected code smells in different programming
 languages.
 
-\subsection{Subjects}~\label{sec:subjects}
+% \subsection{Subjects}~\label{sec:subjects}
 
-To answer the RQs, the subjects must stand for the real-world software projects
-in their respective programming languages. They should be actively used and
-contain a large amount of code. To achieve this goal, the subjects in the
-experiments are 1. have commits on main branch in the last year, 2. have at
-least 10 thousands lines of code (KLOC), and 3. have more than 1,000 stars on
-GitHub. Within those constraints, we selected 3 subjects for each programming
-language, Java, JavaScript, and Python, respectively.
+% \vspace*{-1em}
+
+{\bf Subjects}. To answer the RQs, the subjects must stand for the real-world
+software projects in their respective programming languages. They should be
+actively used and contain a large amount of code. To achieve this goal, the
+subjects in the experiments are 1. have commits on main branch in the last
+year, 2. have at least 10 thousands lines of code (KLOC), and 3. have more than
+1,000 stars on GitHub. Within those constraints, we selected 3 subjects for
+each programming language, Java, JavaScript, and Python, respectively.
 Table~\ref{tab:subject_table} shows the characteristics of the subjects. All
 the subjects have been proven to have commits on main branch in the last year.
-Though TreeNose supports both Python 2 and 3, Pysmell only supports Python 2
+Though TreeNose supports both Python 2 and 3, PySmell only supports Python 2
 and therefore all the selected subjects in Python are written in Python 2. And
 as for the contents of those projects, we decided to include both source code
 and test code in the analysis, it's because the test code is also important for
@@ -43,29 +47,24 @@ developer to comprehend and maintain in software development.
 
 \input{tables/subject_table}
 
-% You should describe details of the subjects that you used in your study,
-% summarised in a table, such as the example. The information in the file ``{\tt
-% figures/plain-figure.tex}'' describes how to format a figure, included here as
-% Always reference tables like you would reference sections/figures, with a
-% capital "T" for table a non-breaking space (the ~ character) between "Table"
-% and "\ref" to ensure the word and the number are not split over two lines.
-% Table~\ref{tab:plain-table}.
+% \subsection{Methodology}~\label{sec:methodology}
 
-\subsection{Methodology}~\label{sec:methodology}
+% \vspace{-1.5em}
 
-To answer the RQ1, we compared \texttt{TreeNose} with 3 language-specific code
-smell detection tools, namely Pysmell \cite{Pysmell} (Python), Jscent
-\cite{Jscent} (JavaScript), and DesigniteJava \cite{DesigniteJava} (Java). All
-3 code smell detectors are language-specific AST-based code smell detection
-tools that are open-source, where Pysmell was proven to achieve 97.7\%
-precision in a study. In the experiment, we compared TreeNose with the
-combination of the other tools. The combination of the other tools mimics the
-scenario where developers utilize multiple code smell detectors to detect
-language-specific code smells in multi-language systems. Those detectors
-support most code smells detected by \texttt{TreeNose}, allowing us to
-implement them in the same sets of projects with \texttt{TreeNose} to compare
-their performances. To quantify the performance of \texttt{TreeNose} and the
-other tools, we adopted precision and recall, which are defined as follows:
+{\bf Methodology}. To answer the RQ1, we compared \texttt{TreeNose} with 3
+language-specific code smell detection tools, namely PySmell \cite{Pysmell}
+(Python), JScent \cite{Jscent} (JavaScript), and DesigniteJava
+\cite{DesigniteJava} (Java). All 3 code smell detectors are language-specific
+AST-based code smell detection tools that are open-source, where PySmell was
+proven to achieve 97.7\% precision in a study. In the experiment, we compared
+TreeNose with the combination of the other tools. The combination of the other
+tools mimics the scenario where developers utilize multiple code smell
+detectors to detect language-specific code smells in multi-language systems.
+Those detectors support most code smells detected by \texttt{TreeNose},
+allowing us to implement them in the same sets of projects with
+\texttt{TreeNose} to compare their performances. To quantify the performance of
+\texttt{TreeNose} and the other tools, we adopted precision and recall, which
+are defined as follows:
 
 \vspace{-1.5em}
 
