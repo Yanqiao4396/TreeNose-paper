@@ -70,16 +70,16 @@ new programming languages without rewriting its source code.
 
 % Design of the experiments
 
-To evaluate the accuracy of \texttt{TreeNose}, we evaluated \texttt{TreeNose} on
-9 open-source projects implemented in Java, JavaScript, or Python. We compared
+We experimentally evaluated \texttt{TreeNose} on
+9 open-source projects implemented in Java, JavaScript, or Python, comparing
 the performance of \texttt{TreeNose} with the combination of 3 language-specific
 code smell detection tools in a manual annotation study. We also conducted
 evaluations on the characteristics of code smells in different programming
 languages.
-
+%
 % Overview of the experimental results
-
-Our results show that \texttt{TreeNose} achieved high precision of 92\% and F1
+%
+The results show that \texttt{TreeNose} achieved high precision of 92\% and F1
 score of 0.94 in detecting selected code smells in target programming languages.
 We also found that (1) Complex Conditional counts for 42\% of the total code
 smells detected on average, which is the most common code smell in the selected
@@ -87,9 +87,9 @@ programming languages. (2) Programming languages have strong tendencies to have
 specific code smells, such as JavaScript contains 3 times more Long Method than
 other systems. (3) Multi-Language software projects have more evenly distributed
 code smells than single-language software projects.
-
+%
 % Listing of the key contributions
-
+%
 The key contributions of this paper are as follows:
 
 \begin{enumerate}
