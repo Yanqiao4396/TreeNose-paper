@@ -14,7 +14,7 @@
         %
         \label{tab:annotation_table}
         %
-        CONFUSION MATRIX FOR TREENOSE AND OD FROM ANNOTATION STUDY
+        Precision, Recall, and F1 scores for the TreeNose (TN) and the language-specific (LS) detectors.
     }
     %
     % Depending on the template, some breathing space might need to
@@ -46,31 +46,24 @@
             % use a new line for each column if needed
             {\bf }
             &
-            {\bf TN Precision} 
+            {\bf TN Precision}
             &
-            {\bf OD Precision}  
+            {\bf LS Precision}
             &
             {\bf TN Recall}
             &
-            {\bf OD Recall}
+            {\bf LS Recall}
             &
             {\bf TN F1}
             &
-            {\bf OD F1}
+            {\bf LS F1}
             \\
-
-
-
-        % Now input the data file Note the filename should not have curly
-        % brackets, otherwise latex will generate a warning (see
-        % https://tex.stackexchange.com/questions/567985/problems-with-inputtable-tex-hline-after-2020-fall-latex-release
-        % as to why)
-        
+            %
         \bottomrule
         \input table-data/annotation_data
 
     \end{tabular}
-
+    %
     %
     % To save space, you might want to remove space here (use a negative
     % \vspace, e.g. \vspace{-1em})
