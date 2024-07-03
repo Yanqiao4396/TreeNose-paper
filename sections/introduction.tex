@@ -19,19 +19,24 @@ CheckStyle \cite{CheckStyle}) in the continuous integration setup of
 open-source projects like Apache Commons Lang \cite{ApacheCommonsLang} and
 Jenkins \cite{Jekins}.
 
-One of the characteristics of modern software projects is the use of multiple
-programming languages \cite{723183}. The combinations of programming languages
-allow developers to rely on functionalities and libraries that are not available
-in a single programming language \cite{7476675}. However, the complexity of
-multi-language software projects increases the difficulty of project
-comprehension and maintenance \cite{7476675, 10.1109/SCAM.2012.11, 7396422}.
-Along with the complexity, the multi-language software projects also introduce
-the challenge of code smell detection. Most of the existing code smell detection
-tools are designed to detect code smells in a single programming language.
-Multi-language projects, like Jenkins \cite{Jekins}, implement multiple
-detection tools in multi-language software projects, which introduces the
-overhead of configuring multiple code smell detection tools with various
-detection approaches.
+% Multi-language projects are common
+% Code smell detection is not commonly language-independent
+% Maintaining multiple tools is a cumbersome task
+
+One of the characteristics of modern software projects is the frequent use of
+multiple programming languages \cite{723183}. The combination of programming
+languages allows developers to mix and match the functionalities and libraries
+that are best supported by specific programming language \cite{7476675}.
+However, the complexity of multi-language software projects increases the
+difficulty of project comprehension and maintenance \cite{7476675,
+10.1109/SCAM.2012.11, 7396422}. Along with the complexity, the multi-language
+software projects also introduce the pressing challenge of code smell
+detection. Most of the existing code smell detection tools are designed to
+detect code smells in a single programming language. Multi-language projects,
+like Jenkins \cite{Jekins}, implement multiple detection tools in
+multi-language software projects, thereby introducing the overhead of
+configuring multiple code smell detection tools with various detection
+approaches.
 
 While few code smell detection tools are language-independent, most code smells
 are. For example, Long Method, one of the most prevalent code smells
