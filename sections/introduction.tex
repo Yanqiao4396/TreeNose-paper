@@ -56,16 +56,20 @@ multi-language software projects and across many single-language projects.
 % It can also avoid the overhead of configuring multiple code smell detection
 % tools with various detection approaches.
 
-To address this need, this paper presents a language-independent code smell
-detection tool, called \texttt{TreeNose}, to detect 5 types of code smells,
+% Describe TreeNose tool and its features,
+% making sure to mention that it is language-independent
+% and that it is highly extensible due to Treesitter
+
+Addressing this need, this paper presents a language-independent code smell
+detection tool, called \texttt{TreeNose}, to detect 5 types of code smells ---
 Complex Conditional, Long Class, Long Method, Long Message Chain, Long Parameter
-List, across multiple programming languages. \texttt{TreeNose} implements
-Treesitter \cite{treeSitter}, a general parser generator, to parse the source
-code of multiple programming languages into the nodes of AST. On top of AST,
-\texttt{TreeNose} queries the nodes with detection rules to detect targeted code
-smells with thresholds, which are configured by developers. \texttt{TreeNose} is
-designed to be highly extensible, allowing developers to add programming
-languages without rewriting source code.
+List --- across multiple programming languages. \texttt{TreeNose} leverages
+Treesitter \cite{treeSitter}, a general-purpose parser generator, to parse the
+source code of multiple programming languages into an AST. Leveraging the
+generated AST, \texttt{TreeNose} queries the nodes with detection rules to
+detect targeted code smells with configurable thresholds. Since it builds on
+Treesitter, \texttt{TreeNose} is highly extensible, allowing developers to add
+new programming languages without rewriting its source code.
 
 To evaluate the accuracy of \texttt{TreeNose}, we evaluated \texttt{TreeNose} on
 9 open-source projects implemented in Java, JavaScript, or Python. We compared
