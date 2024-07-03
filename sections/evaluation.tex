@@ -1,4 +1,4 @@
-\section{Experimental Evaluation}~\label{sec:evaluation}
+\section{Experimental Evaluation of TreeNose}~\label{sec:evaluation}
 
 \vspace*{-1em}
 
@@ -52,21 +52,21 @@ developer to comprehend and maintain in software development.
 % \vspace{-1.5em}
 
 {\bf Methodology}. To answer the RQ1, we compared \texttt{TreeNose} with 3
-language-specific code smell detection tools, namely PySmell \cite{Pysmell}
-(Python), JScent \cite{Jscent} (JavaScript), and DesigniteJava
-\cite{DesigniteJava} (Java). All 3 code smell detectors are language-specific
-AST-based code smell detection tools that are open-source, where PySmell was
-proven to achieve 97.7\% precision in a study. In the experiment, we compared
-TreeNose with the combination of the other tools. The combination of the other
-tools mimics the scenario where developers utilize multiple code smell
-detectors to detect language-specific code smells in multi-language systems.
-Those detectors support most code smells detected by \texttt{TreeNose},
-allowing us to implement them in the same sets of projects with
-\texttt{TreeNose} to compare their performances. To quantify the performance of
-\texttt{TreeNose} and the other tools, we adopted precision and recall, which
-are defined as follows:
+language-specific code smell detection tools, namely PySmell~\cite{Pysmell} for
+Python, JScent~\cite{Jscent} for JavaScript, and
+DesigniteJava~\cite{DesigniteJava} for Java. All 3 code smell detectors are
+language-specific AST-based code smell detection tools that are open-source,
+where PySmell was proven to achieve 97.7\% precision in a study. In the
+experiment, we compared TreeNose with the combination of the other tools. The
+combination of the other tools mimics the scenario where developers utilize
+multiple code smell detectors to detect language-specific code smells in
+multi-language systems. Those detectors support most code smells detected by
+\texttt{TreeNose}, allowing us to implement them in the same sets of projects
+with \texttt{TreeNose} to compare their performances. To quantify the
+performance of \texttt{TreeNose} and the other tools, we adopted precision and
+recall, which are defined as follows:
 
-\vspace{-1.5em}
+\vspace{-1.25em}
 
 \begin{equation}
     Precision = \frac{True Positive}{True Positive + False Positive}
@@ -76,10 +76,10 @@ are defined as follows:
     Recall = \frac{True Positive}{True Positive + False Negative}
 \end{equation}
 
-To represent both precision and recall in a single metric, we calculated the F1
-score, the harmonic mean of precision and recall, which is defined as follows:
+Combining precision and recall, we also calculated the F1 score, the harmonic
+mean of precision and recall, defined as:
 
-\vspace{-1em}
+\vspace{-0.5em}
 
 \begin{equation}
     F1 = 2 * \frac{Precision * Recall}{Precision + Recall}
@@ -184,9 +184,9 @@ the code smell occurs in the language as frequently as the other languages.
 
 \input{tables/annotation_table}
 
-\subsection{Threats to Validity}~\label{sec:threats-to-validity}
+% \subsection{Threats to Validity}~\label{sec:threats-to-validity}
 
-The definition of code smell, code that is hard to comprehend or maintain,
+{\bf Threats to Validity}. The definition of code smell, code that is hard to
 subjective. Therefore, one of concerns in this research is on the definitions
 of the selected code smells. We noted that different code smell detection tools
 utilize different metrics and thresholds to detect the same code smell.
