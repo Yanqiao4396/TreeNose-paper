@@ -31,13 +31,15 @@ that are best supported by specific programming language \cite{7476675}.
 However, the complexity of multi-language software projects increases the
 difficulty of project comprehension and maintenance \cite{7476675,
 10.1109/SCAM.2012.11, 7396422}. Along with the complexity, the multi-language
-software projects also introduce the pressing challenge of code smell
-detection. Most of the existing code smell detection tools are designed to
-detect code smells in a single programming language. Multi-language projects,
-like Jenkins \cite{Jekins}, implement multiple detection tools in
-multi-language software projects, thereby introducing the overhead of
-configuring multiple code smell detection tools with various detection
-approaches.
+software projects also introduce the pressing challenge of code smell detection.
+Most of the existing code smell detection tools are designed to detect code
+smells in a single programming language. Multi-language projects, like Jenkins
+\cite{Jekins}, use more than one detection tool, thereby introducing the
+burdensome need to consistently configure multiple smell detection tools.
+
+% There are benefits to having a language-independent smell
+% detection tool, but sadly one does really not exist yet!
+% This is the pain that we solve in the next paragraph!
 
 While few code smell detection tools are language-independent, most code smells
 are. For example, Long Method, one of the most prevalent code smells
