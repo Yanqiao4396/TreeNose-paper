@@ -1,11 +1,3 @@
-% You can copy this file for every new figure.
-%
-% Figures should be placed at the top of pages/columns
-% where they can.
-%
-% This can be ensured by using the [t] parameter to the
-% "\begin{figure}" declaration.
-%
 \begin{figure}[t]
     % Figures should be centered in the page/column
     \centering
@@ -14,11 +6,7 @@
     % a TikZ diagram, etc.
     \includegraphics[width=\columnwidth]{graphics/Architecture.pdf}
     %
-    % Depending on the template, some breathing space might need to
-    % be added (use \smallskip \medskip etc.) here
-    %
-    % Or, to save space, you might want to remove space
-    % (use a negative \vspace, e.g. \vspace{-1em})
+    \vspace*{-2em}
     %
     \caption{
         % The label should appear _inside_ the caption to ensure
@@ -31,8 +19,9 @@
         %
         \label{fig:architecture}
         %
-        TreeNose: the Code Smell Detection Architecture 
+        Overview of the TreeNose tool for language-independent smell detection.
     }
+    \vspace*{-1em}
     %
     % To save space, you might want to remove space here
     % (use a negative \vspace, e.g. \vspace{-1em})
