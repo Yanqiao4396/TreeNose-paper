@@ -14,7 +14,7 @@ the negative influence of code smells on project quality~\cite{developersCare},
 manual smell detection remains a error-prone and resource-consuming process
 \cite{DetectingDefectsInObject}. To automate this process, different code smell
 detection tools rely on detection methods like abstract syntax tree (AST)
-analysis~\cite{6392174}, textual analysis~\cite{Palomba}, or machine
+analysis~\cite{Lenarduzzi2023}, textual analysis~\cite{Palomba}, or machine
 learning~\cite{ML}. Developers also use popular, yet language-specific, smell
 detection tools (e.g., PMD~\cite{PMD} and CheckStyle~\cite{CheckStyle}) in the
 continuous integration setup of projects like Apache Commons
@@ -24,7 +24,7 @@ Lang~\cite{ApacheCommonsLang} and Jenkins~\cite{Jekins}.
 % Code smell detection is not commonly language-independent
 % Maintaining multiple tools is a cumbersome task
 
-One of the characteristics of many modern software projects is the use of
+One of the characteristics of many modern software projects is their use of
 multiple programming languages \cite{723183}. The combination of programming
 languages allows developers to mix and match the functionalities and libraries
 that are best supported by specific programming language \cite{7476675}.
@@ -41,19 +41,20 @@ burdensome need to consistently configure multiple smell detection tools.
 % detection tool, but sadly one does really not exist yet!
 % This is the pain that we solve in the next paragraph!
 
-While few code smell detection tools are language-independent, most code smells
-are. For example, Long Method, one of the most prevalent code smells
-\cite{developersCare}, can exist in many programming languages. Due to the
-language-independence of code smells, code smell detection tools also have the
-potential to be language-independent. For instance, Van Emden and Moonen, the
-creators of an early code smell detection tool, indicated that their detection
-approach in Java had the potential to be applied to other programming languages
-in the future \cite{1173068}. Furthermore, Abidi~\etal{} built a multi-language
-design smells (i.e., anti-patterns and code smells) detection tool to detect 15
-multi-language-specific design smells in system in combinations of Java and
-C/C++ \cite{MultiLanguageCodeSmells,Fault-Prone}. A truly language-independent
-smell detection tool would offer a unified detection experience for use in both
-multi-language software projects and across many single-language projects.
+While a limited number of code smell detection tools are language-independent,
+most code smells are. For example, Long Method, one of the most prevalent code
+smells \cite{developersCare}, can exist in many programming languages. Due to
+the language-independence of code smells, code smell detection tools also have
+the potential to be language-independent. For instance, Van Emden and Moonen,
+the creators of an early code smell detection tool, indicated that their
+detection approach in Java had the potential to be applied to other programming
+languages in the future \cite{1173068}. Furthermore, Abidi~\etal{} built a
+multi-language design smells (i.e., anti-patterns and code smells) detection
+tool to detect 15 multi-language-specific design smells in system in
+combinations of Java and C/C++ \cite{MultiLanguageCodeSmells,Fault-Prone}. A
+truly language-independent smell detection tool would offer a unified detection
+experience for use in both multi-language software projects and across many
+single-language projects.
 
 % Describe TreeNose tool and its features,
 % making sure to mention that it is language-independent
