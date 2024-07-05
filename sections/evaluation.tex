@@ -9,13 +9,6 @@
 \noindent
 This paper's experiments answer these research questions:
 
-% After building the confidence on the performance of \texttt{TreeNose}, we
-% utilized \texttt{TreeNose} to analyze the structural patterns of the selected
-% code smells, i.e., distribution and prevalence, in the different programming
-% languages. To achieve so, we implemented \texttt{TreeNose} in at least 15
-% open-source projects, including ones written in the combination of the selected
-% languages.
-
 \begin{itemize}[leftmargin=*]
 
     % RQ1: Manual annotation study
@@ -26,7 +19,7 @@ This paper's experiments answer these research questions:
         10,000 lines of code written in Java, JavaScript, or Python, as shown in
         the top half of Table~\ref{tab:subject_table}. Adopting a manual
         annotation methodology, we answer RQ1 by calculating precision, recall,
-        and the F1 score for both \texttt{TreeNose} and popular
+        and the F1 score for both \texttt{TreeNose} and three popular
         language-specific tools.
 
     % RQ2: Code smell percentages
@@ -38,21 +31,16 @@ This paper's experiments answer these research questions:
         calculated the percentage of reported code smells, across the chosen
         projects for each supported language and for multi-language projects.
 
+    % RQ3: Code smell prevalence
+    %
+    \item {\it RQ3: How often do code smells occur in various languages?}
+        Leveraging the combined subject set in Table~\ref{tab:subject_table},
+        we answer RQ3 by calculating a discrepancy score that contextualizes the
+        prevalence of a code smell by programming language.
+
 \end{itemize}
 
- This RQ
-aims to evaluate the accuracy of \texttt{TreeNose} in detecting code smells in
-different programming languages. We selected 3 language-specific code smell
-detection tools to compare \texttt{TreeNose}'s detection accuracy with the
-combination of theirs.
-
-{\it RQ2: How do code smells distribute in various languages?} This RQ
-investigates the distribution of code smells in different programming
-languages.
-
-{\it RQ3: How often do code smells occur in various languages?} This RQ intends
-to evaluate the prevalence of the selected code smells in different programming
-languages.
+% Introduce the subjects
 
 {\bf Subjects}. To answer the RQs, the subjects must stand for the real-world
 software projects in their respective programming languages. They should be
