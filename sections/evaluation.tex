@@ -131,7 +131,7 @@ RQ2, we calculate the number of each code smell in individual projects
 ($s_{k}$) and divide it by the total number of code smells in that project
 ({$S$}) to calculate the project-level percentage of the code smell. Then we
 the sum of the project-level percentages in the projects in the language, and
-divide it by the number of the projects in the language ($NOP$) to calculate
+divide it by the number of the projects in the language ($N_r$) to calculate
 the percentage of the code smell in the language ($P_{k}$).
 
 In the experiment of the RQ2, we calculate the percentage of each code smell
@@ -140,14 +140,14 @@ out of all the selected code smells as follows:
 \vspace{-1em}
 
 \begin{equation}
-P_{s} = \left( \sum_{1}^{k}\frac{{s_{k}}}{S_{k}} \right) \div {NOP} \times 100\%
+P_{s} = \left( \sum_{1}^{k}\frac{{s_{k}}}{S_{k}} \right) \div {N_r} \times 100\%
 \end{equation}
 
 As for the RQ3, we would like to quantify the prevalence of the code smells as
 the occurrence of the code smells in each 1000 lines of code on average
 ($C_{s}$). To calculate it, we divide the number of each code smell in
 individual projects ($s_{k}$) by the total number of lines in the project
-($NOL_{k}$) to calculate the project-level prevalence of the code smell, and
+($N_{l}$) to calculate the project-level prevalence of the code smell, and
 then take the average of the occurrences in each project. Finally by taking the
 average of the occurrences in the projects in the language, we calculate the
 prevalence of the code smell in the language as follows:
@@ -155,7 +155,7 @@ prevalence of the code smell in the language as follows:
 \vspace{-1.0em}
 
 \begin{equation}
-C_{s} = \left( \sum_{1}^{k}{\frac{s_{k}}{NOL_{k}}} \right) \div NOP
+C_{s} = \left( \sum_{1}^{k}{\frac{s_{k}}{N_l}_{k}}} \right) \div N_r
 \end{equation}
 
 With the prevalence score $C_{s}$, we want to quantify how much one language
