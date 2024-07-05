@@ -1,50 +1,47 @@
 \input{figures/Architecture}
 
-% TODO: Adjust the spacing and layout of the following content
+% Use tight spacing around the title of the section
 
 \vspace*{-0.5em}
 
 \section{Language-Independent Smell Detection}~\label{sec:approach}
 
-\vspace*{-0.1em}
+\vspace*{-1em}
 
-This section resolves 2 questions: 1. what are the definitions of the code
-smells that \texttt{TreeNose} detects, and 2. what's the approach that
-\texttt{TreeNose} uses to detect code smells across multiple programming
-languages.
+% Give the basic definitions of the code smells
+% Motivate why we picked these code smells
+% Note: only four out of the five code smells that
+% developers care about are implemented in TreeNose
 
-% Define the basic definitions of the code smells
+{\bf Definitions}.Bearing in mind both the top 15 most common code smells
+reported by developers~\cite{developersCare} and those smells commonly detected
+by existing tools for Java, JavaScript, and Python, we designed
+\texttt{TreeNose} to detect these code smells:
 
-{\bf Definitions}. Code smells was first defined by Fowler and Beck back to 1999
-in their book \textit{Refactoring}, where they defined 22 kinds of code smells
-\cite{Fowler_Beck}. Sine then, many researchers dedicated to define more code
-smells and to improve the existing ones. This paper will focus on the code
-smells that are top 15 most common in an empirical study conducted by Yamashita
-\& Moonen \cite{developersCare}. Among them, we selected 5 code smells that
-occur across multiple programming languages: 1. Complex Conditional, 2. Long
-Class, 3. Long Method, 4. Long Parameter List, and 5. Long Message Chain. The
-definitions of these code smells are as follows:
-
-\textbf{Complex Conditional (CC)}~\cite{Fowler_Beck}: this smell occur when a
-conditional clause contains too many conditions, such as nested if-else
-statements, and enormous switch-case statements. This smell makes the code hard
-to read and maintain on logic level.
-
-\textbf{Long Class (LC)}~\cite{Fowler_Beck}: a class handles too much work.
-Normally it occurs with too many properties. Or a class has too many lines
-because of the extremely long properties.
-
-\textbf{Long Method (LM)}~\cite{Fowler_Beck}: a method grows too long. Normally
-it occurs with too many lines of code. The longer a method is, the harder it is
-to understand the procedure.
-
-\textbf{Long Message Chain (LMC)}~\cite{Fowler_Beck}: a long chain of object
-calls. This smell occurs when a method or an attribute calls another method or
-an attribute, and so on.
-
-\textbf{Long Parameter List (LPL)}~\cite{Fowler_Beck}: a method or a function
-has too many parameters. When a method has too many parameters, it often
-indicates that the method is doing too much work.
+\begin{itemize}[leftmargin=*]
+	%
+	\item \textbf{Complex Conditional (CC)}~\cite{Fowler_Beck}: this smell occur
+	      when a conditional clause contains too many conditions, such as nested
+	      if-else statements, and enormous switch-case statements.This smell makes
+	      the code hard to read and maintain on logic level.
+	      %
+	\item \textbf{Long Class (LC)}~\cite{Fowler_Beck}: a class handles too much
+	      work. Normally it occurs with too many properties. Or a class has too many
+	      lines because of the extremely long properties.
+	      %
+	\item \textbf{Long Method (LM)}~\cite{Fowler_Beck}: a method grows too long. Normally
+	      it occurs with too many lines of code. The longer a method is, the harder it is
+	      to understand the procedure.
+	      %
+	\item \textbf{Long Message Chain (LMC)}~\cite{Fowler_Beck}: a long chain of object
+	      calls. This smell occurs when a method or an attribute calls another method or
+	      an attribute, and so on.
+	      %
+	\item \textbf{Long Parameter List (LPL)}~\cite{Fowler_Beck}: a method or a function
+	      has too many parameters. When a method has too many parameters, it often
+	      indicates that the method is doing too much work.
+	      %
+\end{itemize}
 
 {\bf Detection Technique}. \texttt{TreeNose} adopts AST-based approach to detect
 code smells. The Fig.~\ref{fig:architecture} discloses the architecture of
