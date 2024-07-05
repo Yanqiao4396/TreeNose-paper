@@ -140,7 +140,7 @@ out of all the selected code smells as follows:
 \vspace{-1em}
 
 \begin{equation}
-    P_{s} = \frac{\sum_{1}^{k}\frac{{s_{k}}}{S_{k}}}{NOP}\%
+P_{s} = \left( \sum_{1}^{k}\frac{{s_{k}}}{S_{k}} \right) \div {NOP} \times 100\%
 \end{equation}
 
 As for the RQ3, we would like to quantify the prevalence of the code smells as
@@ -155,7 +155,7 @@ prevalence of the code smell in the language as follows:
 \vspace{-1.0em}
 
 \begin{equation}
-    C_{s} = \frac{\sum_{1}^{k}{\frac{s_{k}}{NOL_{k}}}}{NOP}
+C_{s} = \left( \sum_{1}^{k}{\frac{s_{k}}{NOL_{k}}} \right) \div NOP
 \end{equation}
 
 With the prevalence score $C_{s}$, we want to quantify how much one language
@@ -168,7 +168,7 @@ programming languages ($C_{O}$). We calculate the occurrence discrepancy score
 \vspace{-1.0em}
 
 \begin{equation}
-    D = (C_{O} - C_{s}) / C_{O}
+    D = (C_{O} - C_{s}) \div C_{O}
 \end{equation}
 
 In this equation, a positive score indicates that the code smell occurs less
