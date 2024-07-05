@@ -2,18 +2,43 @@
 
 \vspace*{-1em}
 
-To evaluate the performance of \texttt{TreeNose} in different programming
-language systems, we implemented \texttt{TreeNose} in 9 large open-source
-projects with at least 10,000 lines of code written in Java, JavaScript, or
-Python. After building the confidence on the performance of \texttt{TreeNose},
-we utilized \texttt{TreeNose} to analyze the structural patterns of the
-selected code smells, i.e., distribution and prevalence, in the different
-programming languages. To achieve so, we implemented \texttt{TreeNose} in at
-least 15 open-source projects, including ones written in the combination of the
-selected languages. We designed the following research questions:
+% Integration of content to save space and be direct!
+% 1) Describe the context for the empirical study
+% 2) Describe the research questions
 
+\noindent
+This paper's experiments answer these research questions:
 
-{\it RQ1: How does \texttt{TreeNose} perform in different languages?} This RQ
+% After building the confidence on the performance of \texttt{TreeNose}, we
+% utilized \texttt{TreeNose} to analyze the structural patterns of the selected
+% code smells, i.e., distribution and prevalence, in the different programming
+% languages. To achieve so, we implemented \texttt{TreeNose} in at least 15
+% open-source projects, including ones written in the combination of the selected
+% languages.
+
+\begin{itemize}[leftmargin=*]
+
+    % RQ1: Manual annotation study
+    %
+    \item {\it RQ1: How does \texttt{TreeNose} perform in different languages?}
+        To answer RQ1, we evaluated \texttt{TreeNose}'s code smell detection
+        effectiveness by applying it to 9 open-source projects with at least
+        10,000 lines of code written in Java, JavaScript, or Python, as shown in
+        the top half of Table~\ref{tab:subject_table}. Adopting a manual
+        annotation methodology, we answer RQ1 by calculating precision, recall,
+        and the F1 score for both \texttt{TreeNose} and popular
+        language-specific tools.
+
+    % RQ2: Code smell percentages
+    %
+    \item {\it RQ2: How do code smells distribute in various languages?} To
+        answer RQ2, we augmented the 9 projects used to answer RQ1 with 7 more,
+        including 4 projects that are multi-language in nature, as shown in
+        Table~\ref{tab:subject_table}.
+
+\end{itemize}
+
+ This RQ
 aims to evaluate the accuracy of \texttt{TreeNose} in detecting code smells in
 different programming languages. We selected 3 language-specific code smell
 detection tools to compare \texttt{TreeNose}'s detection accuracy with the
