@@ -13,33 +13,29 @@
 % Note: only four out of the five code smells that
 % developers care about are implemented in TreeNose
 
-{\bf Definitions}.Bearing in mind both the top 15 most common code smells
+{\bf Definitions}. Bearing in mind both the top 15 most common code smells
 reported by developers~\cite{developersCare} and those smells commonly detected
 by existing tools for Java, JavaScript, and Python, we designed
 \texttt{TreeNose} to detect these code smells:
 
 \begin{itemize}[leftmargin=*]
 	%
-	\item \textbf{Complex Conditional (CC)}~\cite{Fowler_Beck}: occurs when a
-	      conditional clause contains too many conditions, such as nested {\tt
-			      if-else} statements, and long {\tt switch-case} statements.
+    \item \textbf{Complex Conditional (CC)}~\cite{Fowler_Beck}: occurs when a
+        conditional clause contains too many conditions, such as nested {\tt
+        if-else} statements, and long {\tt switch-case} statements.
 	      %
-	\item \textbf{Long Class (LC)}~\cite{Fowler_Beck}: a class handles too much
-	      work. Normally it occurs with too many properties. Or a class has too
-	      many lines because of the extremely long properties.
+    \item \textbf{Long Class (LC)}~\cite{Fowler_Beck}: evident when a class
+        defines too many (or too lengthy of) properties and/or behaviors.
 	      %
-	\item \textbf{Long Method (LM)}~\cite{Fowler_Beck}: a method grows too long.
-	      Normally it occurs with too many lines of code. The longer a method is,
-	      the harder it is to understand the procedure.
+    \item \textbf{Long Method (LM)}~\cite{Fowler_Beck}: a method has too many
+        lines.
+        %
+    \item \textbf{Long Message Chain (LMC)}~\cite{Fowler_Beck}: evident when
+        there is a long chain of method calls and/or attribute references.
 	      %
-	\item \textbf{Long Message Chain (LMC)}~\cite{Fowler_Beck}: a long chain of
-	      object calls. This smell occurs when a method or an attribute calls
-	      another method or an attribute, and so on.
-	      %
-	\item \textbf{Long Parameter List (LPL)}~\cite{Fowler_Beck}: a method or a
-	      function has too many parameters. When a method has too many parameters,
-	      it often indicates that the method is doing too much work.
-	      %
+    \item \textbf{Long Parameter List (LPL)}~\cite{Fowler_Beck}: occurs when a
+        method has too many input parameters.
+        %
 \end{itemize}
 
 {\bf Detection Technique}. \texttt{TreeNose} adopts AST-based approach to detect
