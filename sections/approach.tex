@@ -20,21 +20,21 @@ by existing tools for Java, JavaScript, and Python, we designed
 
 \begin{itemize}[leftmargin=*]
 	%
-	\item \textbf{Complex Conditional (CC)}~\cite{Fowler_Beck}: occurs when a
-	      conditional clause contains too many conditions, such as nested {\tt
-			      if-else} statements, and long {\tt switch-case} statements.
+    \item \textbf{Complex Conditional (CC)}~\cite{Fowler_Beck}: occurs when
+        a conditional clause contains too many conditions, such as nested {\tt
+        if-else} statements, and long {\tt switch-case} statements.
 	      %
-	\item \textbf{Long Class (LC)}~\cite{Fowler_Beck}: evident when a class
-	      defines too many (or too lengthy of) properties and/or behaviors.
+    \item \textbf{Long Class (LC)}~\cite{Fowler_Beck}: evident when a class
+        defines too many (or too lengthy of) properties and/or behaviors.
 	      %
-	\item \textbf{Long Method (LM)}~\cite{Fowler_Beck}: a method has too many
-	      lines.
+    \item \textbf{Long Method (LM)}~\cite{Fowler_Beck}: a method has too
+        many lines.
 	      %
-	\item \textbf{Long Message Chain (LMC)}~\cite{Fowler_Beck}: evident when
-	      there is a long chain of method calls and/or attribute references.
+    \item \textbf{Long Message Chain (LMC)}~\cite{Fowler_Beck}: evident when
+        there is a long chain of method calls and/or attribute references.
 	      %
-	\item \textbf{Long Parameter List (LPL)}~\cite{Fowler_Beck}: occurs when a
-	      method has too many input parameters.
+    \item \textbf{Long Parameter List (LPL)}~\cite{Fowler_Beck}: occurs when
+        a method has too many input parameters.
 	      %
 \end{itemize}
 
@@ -43,24 +43,22 @@ by existing tools for Java, JavaScript, and Python, we designed
 {\bf Detection Technique}. Focused on the aforementioned code smells,
 \texttt{TreeNose} uses Treesitter parsers and an AST-based approach to detect
 code smells, as shown in Figure~\ref{fig:architecture} and described in the
-following list of smell detection phases:
+following list of smell detection steps:
 
 \begin{itemize}[leftmargin=*]
-
 	%
-    \item \textbf{Phase 1: Extract Source Code}: \texttt{TreeNose} recursively
-        extracts source code matching with the target programming language from
-        the project. During this procedure, \texttt{TreeNose} fetches all target
-        files unless the file or the path is in the ignore list.
+    \item \textbf{Step 1: Extract Source Code}: Extract source code written in
+        the specified programming language, fetching every target files unless
+        it or its containing path is in the ignore list.
 	      %
-    \item \textbf{Phase 2: Parse Source Code to AST}: \texttt{TreeNose} parses
+    \item \textbf{Step 2: Parse Source Code to AST}: \texttt{TreeNose} parses
         the source code to AST with Treesitter \cite{treeSitter}. Treesitter is
         a parser generator tool that generates AST in multiple programming
         languages. It currently supports 18 language bindings. Treesitter
         decouples the parser from the language grammar, making it possible to
         parse the source code in multiple programming languages.
 	      %
-    \item \textbf{Phase 3: Analyze AST to Detect Code Smells}: \texttt{TreeNose}
+    \item \textbf{Step 3: Analyze AST to Detect Code Smells}: \texttt{TreeNose}
         analyzes AST to detect code smells. Before the analysis, our developers
         categorize the language-specific Treesitter AST nodes like method and
         function across programming languages into language-independent groups.
