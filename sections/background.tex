@@ -2,7 +2,7 @@
 
 \section{Background and Related Work}~\label{sec:background}
 
-\vspace*{-0.5em}
+\vspace*{-1em}
 
 % Explain the basics of code smells and their importance and prevalence
 
@@ -50,29 +50,6 @@ Open-source developers have also created many language-specific linters for
 smell detection (e.g., PMD~\cite{PMD} and CheckStyle~\cite{CheckStyle}), while
 researchers created and evaluated ones like PySmell~\cite{Pysmell}.
 
-% Cut content:
-
-% built a code smell detection tool in Python targeting on
-% Python specific code smells.
-
-% All the tools mentioned
-% above rely on AST to detect code smells. Except AST-based detection, there are
-% also developers utilizing approaches like Machine Learning and textual
-% components. For example, Pontillo utilized Machine Learning to detect test
-% smells, similar to code smell, to achieve better performance than
-% heuristic-based techniques, but had a challenge of overcoming F1 score of 0.51.
-% Palomba~\etal{} designed a text-based code smell technique to detect code smells
-% and found the benefits of combining textual and structural information in code
-% smell detection \cite{Palomba}.
-
-% Since modern software systems use
-% ~\cite{723183}.
-
-% It's one feature of modern software development to use multiple programming
-% languages%
-
-% TODO: Reference Saavedra 2023 paper; it uses an intermediate representation
-
 {\bf Multi-Language Code Smells}.
 %
 Since developers mix and match the best features of programming
@@ -84,14 +61,17 @@ smells~\cite{PMD,CheckStyle,Pysmell,Jscent,DesigniteJava}, they do so with
 differing internal representations and defaults, making their use difficult
 either across many single-language projects or in any multi-language one.
 %
-In response, Abidi~\etal{} defined 12 multi-language design
-smells~\cite{MultiLanguageCodeSmells}, discovering that they are both common
-and a strong negative influence on software quality~\cite{Abidi2}.
+In response, Abidi~\etal{} defined 12 multi-language
+smells~\cite{MultiLanguageCodeSmells}, ultimately discovering that they are
+both common and a strong negative influence on software quality~\cite{Abidi2}.
 %
-Using a mult-language code smell detector implemented with \texttt{srcML}, they
-found that multi-language design smells are prevalent in multi-language systems
-and have a strong negative impact on software readability~\cite{Fault-Prone}.
+Using a multi-language detector implemented with \texttt{srcML}, they found
+that multi-language smells are prevalent in multi-language systems and have a
+strong negative influence on software readability~\cite{Fault-Prone}.
 %
 Finally, Nagy and Cleve built a smell detector for SQL statements embedded in
 Java code~\cite{SQLInJava} while Saavedra and Ferreira~\cite{Saavedra2023}
-created one for infrastructure definition languages.
+created one for projects in various infrastructure definition languages.
+%
+Unlike \texttt{TreeNose}, these tools do not use Treesitter parsers, thereby
+making them both less general-purpose and less extensible.
