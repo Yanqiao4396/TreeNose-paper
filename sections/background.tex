@@ -1,25 +1,26 @@
-\vspace*{-0.5em}
+\vspace*{-1em}
 
 \section{Background and Related Work}~\label{sec:background}
 
-\vspace*{-1em}
+\vspace*{-0.5em}
 
 % Explain the basics of code smells and their importance and prevalence
 
-{\bf Code Smells}. Originating from Fowler and Beck's \textit{Refactoring} book,
-code smells are important considerations for both researchers and practitioners.
-The research community has defined numerous code
-smells~\cite{Pysmell,SQLAntipatterns,CleanCode,RefactoringWorkbook}, with Jerzyk
-recently releasing an online catalog with 56 common code smells~\cite{Jerzyk2023}. At the same time, Yamashita investigated the effects of code
-smells on maintainability (e.g.,~\cite{6392174, 6405287}) and studied
-developers' opinion of code smells~\cite{developersCare}, ultimately identifying
-what real-world developers consider the top 15 most common code smells.
-Moreover, Tufano~\etal{}~\cite{whenandwhy} and Peters and
+{\bf Code Smells}. Originating from Fowler and Beck's \textit{Refactoring}
+book, code smells are important considerations for both researchers and
+practitioners. The research community has defined numerous code
+smells~\cite{Pysmell,SQLAntipatterns,CleanCode,RefactoringWorkbook}, with
+Jerzyk recently releasing an online catalog with 56 common code
+smells~\cite{Jerzyk2023}. At the same time, Yamashita investigated the effects
+of code smells on maintainability (e.g.,~\cite{6392174, 6405287}) and studied
+developers' opinion of code smells~\cite{developersCare}, ultimately
+identifying what real-world developers consider the top 15 most common code
+smells. Moreover, Tufano~\etal{}~\cite{whenandwhy} and Peters and
 Zaidman~\cite{lifespan} characterized the lifespan of code smells in software
 projects. Finally, Santana~\etal{} found that strong agglomerations of certain
 code smells often occur in software projects~\cite{Santana} and
-Pascarella~\etal{} showed that code reviews significantly reduce the severity of
-code smells~\cite{Pascarella}.
+Pascarella~\etal{} showed that code reviews significantly reduce the severity
+of code smells~\cite{Pascarella}.
 
 % Cut content:
 
@@ -29,19 +30,25 @@ code smells~\cite{Pascarella}.
 % Static Analysis. Van Emden and Moonen built the first code smell detection
 % tool in Java \cite{1173068}.
 
-{\bf Code Smell Detection}. Due to their negative influence on software quality,
-developers acknowledge the importance of detecting code
-smells~\cite{developersCare} even though manual code smell detection is both
-error-prone and resource-consuming~\cite{DetectingDefectsInObject}.
+% Provide a very brief overview of code smell detection tools.
+% Key insight to get across:
+% - AST
+% - Text
+% - Machine Learning
+% Real tools called linters
+
+{\bf Code Smell Detection}. Due to their negative influence on software
+quality, developers acknowledge the importance of detecting code
+smells~\cite{developersCare} --- even though manual code smell detection is
+both error-prone and resource-consuming~\cite{DetectingDefectsInObject}.
 %
-To automate this process, different code smell detection tools rely on detection
-methods like abstract syntax tree (AST) analysis~\cite{Lenarduzzi2023}, textual
-analysis~\cite{Palomba}, or machine learning~\cite{ML}.
+To automate this process, different code smell detection tools analyze either a
+program's abstract syntax tree (AST)~\cite{Lenarduzzi2023} or its
+text~\cite{Palomba}, or use machine learning~\cite{ML}.
 %
-Open-source developers have created many language-specific smell detection
-tools, also called linters (e.g., PMD~\cite{PMD} and
-CheckStyle~\cite{CheckStyle}), while researchers made ones like
-PySmell~\cite{Pysmell}.
+Open-source developers have also created many language-specific linters for
+smell detection (e.g., PMD~\cite{PMD} and CheckStyle~\cite{CheckStyle}), while
+researchers created and evaluated ones like PySmell~\cite{Pysmell}.
 
 % Cut content:
 
