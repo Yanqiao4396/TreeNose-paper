@@ -1,3 +1,5 @@
+\input{tables/subject_table}
+
 \section{Experimental Evaluation of TreeNose}~\label{sec:evaluation}
 
 \vspace*{-1em}
@@ -26,10 +28,6 @@ languages.
 to evaluate the prevalence of the selected code smells in different programming
 languages.
 
-% \subsection{Subjects}~\label{sec:subjects}
-
-% \vspace*{-1em}
-
 {\bf Subjects}. To answer the RQs, the subjects must stand for the real-world
 software projects in their respective programming languages. They should be
 actively used and contain a large amount of code. To achieve this goal, the
@@ -44,12 +42,6 @@ and therefore all the selected subjects in Python are written in Python 2. And
 as for the contents of those projects, we decided to include both source code
 and test code in the analysis, it's because the test code is also important for
 developer to comprehend and maintain in software development.
-
-\input{tables/subject_table}
-
-% \subsection{Methodology}~\label{sec:methodology}
-
-% \vspace{-1.5em}
 
 {\bf Methodology}. To answer the RQ1, we compared \texttt{TreeNose} with 3
 language-specific code smell detection tools, namely PySmell~\cite{Pysmell} for
@@ -130,13 +122,13 @@ helps to understand the distribution and prevalence of the selected code smells
 in different programming languages, and furthermore the target languages'
 tendencies to contain specific code smells.
 
- To minimize the bias introduced by the different sizes of the projects in the
- RQ2, we calculate the number of each code smell in individual projects
- ($s_{k}$) and divide it by the total number of code smells in that project
- ({$S$}) to calculate the project-level percentage of the code smell. Then we
- the sum of the project-level percentages in the projects in the language, and
- divide it by the number of the projects in the language ($NOP$) to calculate
- the percentage of the code smell in the language ($P_{k}$).
+To minimize the bias introduced by the different sizes of the projects in the
+RQ2, we calculate the number of each code smell in individual projects
+($s_{k}$) and divide it by the total number of code smells in that project
+({$S$}) to calculate the project-level percentage of the code smell. Then we
+the sum of the project-level percentages in the projects in the language, and
+divide it by the number of the projects in the language ($NOP$) to calculate
+the percentage of the code smell in the language ($P_{k}$).
 
 In the experiment of the RQ2, we calculate the percentage of each code smell
 out of all the selected code smells as follows:
@@ -149,7 +141,7 @@ out of all the selected code smells as follows:
 
 As for the RQ3, we would like to quantify the prevalence of the code smells as
 the occurrence of the code smells in each 1000 lines of code on average
-($C_{s}$). to calculate it, we divide the number of each code smell in
+($C_{s}$). To calculate it, we divide the number of each code smell in
 individual projects ($s_{k}$) by the total number of lines in the project
 ($NOL_{k}$) to calculate the project-level prevalence of the code smell, and
 then take the average of the occurrences in each project. Finally by taking the
@@ -164,9 +156,9 @@ prevalence of the code smell in the language as follows:
 
 With the prevalence score $C_{s}$, we want to quantify how much one language
 outperforms the others. Therefore, we utilized the discrepancy formula to
-calculate the occurrence discrepancy score. we compared the occurrence of one
+calculate the occurrence discrepancy score. We compared the occurrence of one
 language ($C_{s}$) against the same code smell in the combination of the other
-programming languages ($C_{O}$). we calculate the occurrence discrepancy score
+programming languages ($C_{O}$). We calculate the occurrence discrepancy score
 (D) of each code smell in the projects as follows:
 
 \vspace{-1.0em}
