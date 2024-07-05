@@ -82,18 +82,16 @@ nature~\cite{723183}.
 Although many language-specific smell detectors find similar code
 smells~\cite{PMD,CheckStyle,Pysmell,Jscent,DesigniteJava}, they do so with
 differing internal representations and defaults, making their use difficult
-either across many single-language projects or in any multi-language ones.
+either across many single-language projects or in any multi-language one.
 %
 In response, Abidi~\etal{} defined 12 multi-language design
 smells~\cite{MultiLanguageCodeSmells}, discovering that they are both common
-and a strong negative influence on software quality~\cite{Abidi2}. They also
-built a multi-system code smell detection tool with srcML (a multi-language
-parsing tool to convert source code into XML), to detect design smells in
-multi-language systems.
-
-They suggested that multi-language design smells are prevalent in
-multi-language systems and have a strong negative impact on software
-readability \cite{Fault-Prone}.
-
-Nagy and Cleve built a SQL code smell detection tool for SQL statements
-embedded in Java code \cite{SQLInJava}.
+and a strong negative influence on software quality~\cite{Abidi2}.
+%
+Using a mult-language code smell detector implemented with \texttt{srcML}, they
+found that multi-language design smells are prevalent in multi-language systems
+and have a strong negative impact on software readability~\cite{Fault-Prone}.
+%
+Finally, Nagy and Cleve built a smell detector for SQL statements embedded in
+Java code~\cite{SQLInJava} while Saavedra and Ferreira~\cite{Saavedra2023}
+created one for infrastructure definition languages.
