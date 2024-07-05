@@ -6,22 +6,24 @@
 
 % Explain the basics of code smells and their importance and prevalence
 
-{\bf Code Smells}. Originating from Fowler and Beck's \textit{Refactoring} book,
-code smells are important considerations for both researchers and practitioners.
+{\bf Code Smells}.
+Originating from Fowler and Beck's \textit{Refactoring} book, code smells are
+important considerations for both researchers and practitioners.
 The research community has defined numerous code smells
 \cite{Pysmell,SQLAntipatterns,CleanCode,RefactoringWorkbook}, with Jerzyk
 recently releasing an online catalog with 56 common code smells
-\cite{Jerzyk2023}. At the same time, community was also exploring the
-characteristics of code smells. Yamashita conducted several empirical studies to
-investigate the effects of code smells on maintainability \cite{6392174}
-\cite{6405287}. She also conducted another study to discover developers' opinion
-of code smells \cite{developersCare}, where she discovered the top 15 most common
-code smells in developers' perception. Researchers, like Tufano
-\cite{whenandwhy} and Peters \cite{lifespan}, conducted studies to discover the
-characteristics of code smells in lifespan of software projects. Santana, Cruz,
-and, Figueiredo found the strong agglomerations of certain code smells highly
-occur in software projects \cite{Santana}. Pascarella found active code reviews
-significantly reduce the severity of code smells \cite{Pascarella}.
+\cite{Jerzyk2023}.
+At the same time, Yamashita investigated the effects of code smells on
+maintainability (e.g., \cite{6392174, 6405287}) and studied developers' opinion
+of code smells \cite{developersCare}, ultimately finding what real-world
+developers consider the top 15 most common code smells.
+Researchers, like Tufano \cite{whenandwhy} and Peters \cite{lifespan},
+conducted studies to discover the characteristics of code smells in lifespan of
+software projects.
+Santana, Cruz, and, Figueiredo found the strong agglomerations of certain code
+smells highly occur in software projects \cite{Santana}.
+Pascarella found active code reviews significantly reduce the severity of code
+smells \cite{Pascarella}.
 
 {\bf Code Smell Detection}. Because of the negative impact of code smells on
 software projects, developers acknowledge the importance of detecting them. The
@@ -39,7 +41,7 @@ also developers utilizing approaches like Machine Learning and textual
 components. For example, Pontillo utilized Machine Learning to detect test
 smells, similar to code smell, to achieve better performance than
 heuristic-based techniques, but had a challenge of overcoming F1 score of 0.51.
-Palomba el al. designed a text-based code smell technique to detect code smells
+Palomba~\etal{} designed a text-based code smell technique to detect code smells
 and found the benefits of combining textual and structural information in code
 smell detection \cite{Palomba}.
 
@@ -52,14 +54,15 @@ strengths~\cite{7476675}.
 %
 Common code smells are broadly recognized across programming languages
 \cite{PMD,CheckStyle,Pysmell,Jscent,DesigniteJava}. There are also researchers
-who have conducted studies to investigate code smells in multi-language systems.
-Abidi et al. defined 12 multi-language design smells (i.e., code smells and
-anti-patterns) \cite{MultiLanguageCodeSmells}. They discovered that
-multi-language code smells commonly raise during the maintenance and refactoring
-activities and have a strong negative impact on software quality \cite{Abidi2}.
-They also built a multi-system code smell detection tool with srcML (a
-multi-language parsing tool to convert source code into XML), to detect design
-smells in multi-language systems. They suggested that multi-language design
-smells are prevalent in multi-language systems and have a strong negative impact
-on software readability \cite{Fault-Prone}. Nagy and Cleve built a SQL code
-smell detection tool for SQL statements embedded in Java code \cite{SQLInJava}.
+who have conducted studies to investigate code smells in multi-language
+systems. Abidi~\etal{} defined 12 multi-language design smells (i.e., code
+smells and anti-patterns) \cite{MultiLanguageCodeSmells}. They discovered that
+multi-language code smells commonly raise during the maintenance and
+refactoring activities and have a strong negative impact on software quality
+\cite{Abidi2}. They also built a multi-system code smell detection tool with
+srcML (a multi-language parsing tool to convert source code into XML), to
+detect design smells in multi-language systems. They suggested that
+multi-language design smells are prevalent in multi-language systems and have a
+strong negative impact on software readability \cite{Fault-Prone}. Nagy and
+Cleve built a SQL code smell detection tool for SQL statements embedded in Java
+code \cite{SQLInJava}.
