@@ -235,35 +235,40 @@ where 1 means the code smell doesn't occur in the language at all, and 0 means
 the code smell occurs in the language as frequently as the other languages.
 
 {\bf Threats to Validity}. The definition of code smell, code that is hard to
-subjective. Therefore, one of concerns in this research is on the definitions
-of the selected code smells. We noted that different code smell detection tools
+subjective, which is one of the main concerns in this research. 
+We noted that various code smell detection tools
 utilize different metrics and thresholds to detect the same code smell.
 Therefore, the metrics of \texttt{TreeNose} may not be consistent with the
-other tools. As a result, the selection of metrics and thresholds in
+other tools. Similarly, the selection of metrics and thresholds in
 \texttt{TreeNose} may not be optimal for detecting selected code smells. To
-mitigate the threats, we conducted an annotation study with 2 developers to
+mitigate the threats, we conducted an annotation study with 2 internal authors to
 evaluate the performance of \texttt{TreeNose} in detecting code smells.
 
-Another threat is related to the annotation study. To evaluate the performance
-of \texttt{TreeNose}, we conducted an annotation study with 2 developers. Due
-to the limited number of developers in the study, the results may not be
+% Remove the sentence cuz it's redundant with the end of last paragraph
+% """Another threat is related to the annotation study. To evaluate the performance
+% of \texttt{TreeNose}, we conducted an annotation study with 2 developers.
+% """
+Another threat is related to the annotation study. With the limited number of developers in the study, the results may not be
 generalizable to all developers. We also noted that the amount of subjects and
 samples are limited in the study. Though we ensured the subjects are actively
 used and well-maintained, the results may still not be generalizable to all
-software projects. To mitigate the threats, we plan to conduct more studies
+software projects in the target language. We plan to conduct more studies
 with more developers and subjects in the future.
 
-The third threat is related to the limitation of the selected code smell
-detectors. They didn't detect all the selected code smells, and the results may
-be biased by the missing code smells. To mitigate the threats, we plan to
-implement more code smell detectors in the future to compare the performance of
-\texttt{TreeNose} with more detectors.
+% Note: in my view, the third threat is not a threat to validity but a limitation, so we may delete it?
+
+% The third threat is related to the limitation of the selected code smell
+% detectors. They didn't detect all the selected code smells, and the results may
+% be biased by the missing code smells. To mitigate the threats, we plan to
+% implement more code smell detectors in the future to compare the performance of
+% \texttt{TreeNose} with more detectors.
 
 \input{tables/percentage_table}
 
 The last threat is due to our decision of including the test code in the
-analysis. Test code is important for developers to comprehend and maintain, but
-it may have different conventions and styles from the source code. Therefore,
-the same thresholds and metrics of TreeNose may not be optimal for the test
-code. To mitigate the threats, we plan to conduct more studies with separate
-analysis of the source code and test code in the future.
+analysis. Test code is important for developers to comprehend and maintain in 
+the software development, but
+it usually obeys different conventions and styles from the source code. Therefore,
+the same detection thresholds in TreeNose are mainly designed for the source code
+, which may not be optimal for the test code. 
+To mitigate the threats, we plan to conduct studies with the test code excluded in the future.
