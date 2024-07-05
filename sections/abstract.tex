@@ -1,28 +1,12 @@
 \begin{abstract}
-
-    % A code smell is a code-design issue that can lead to decrease in code
-    % quality, thereby hindering developers from reading or maintaining a
-    % software program.
     %
     Code smell detection tools help developers by automatically checking for the
     existence of code anti-patterns that may compromise software quality.
-    %
-    % Code smell detection tools have the potential to be language-independent,
-    % because common code smells occur in many different programming languages.
-    % % A language-independent code smell detector can set unified detection
-    % rules across programming languages, which is especially useful in
-    % multi-language software development. % However, few code smell detection
-    % tools support multiple programming languages.
     %
     Despite the prevalence of common code smells across various programming
     languages, there is a noticeable need for language-independent tools that
     consistently perform code smell detection for both multiple- and
     single-language projects.
-    %
-    % Despite both the prevalence of common code smells across various programming
-    % languages and the need for tools that consistently perform code smell detection
-    % for both multiple- and single-language projects, there is a noticeable lack of
-    % such tools that support multiple programming languages.
     %
     Filling the aforementioned gap, this paper presents a tool, called
     \texttt{TreeNose}, that leverages well-established Treesitter source code
@@ -37,32 +21,14 @@
     \texttt{TreeNose} to language-specific code smell detectors, ultimately
     revealing that \texttt{TreeNose}'s classifications lead to an F1 score of 0.94.
     %
-    % 9 open-source projects implemented in the 3 chosen
-    % languages, comparing through a manual annotation traditional, language-specific
-    % code smell detectors in a .
-    %
-    % We applied \texttt{TreeNose} to 16 open-source projects implemented in
-    % the 3
-    % chosen languages and the combinations of those languages,
-    % comparing its results
-    %
-    % The results from this study
-    %
     Augmenting the 9 projects with 7 more, including 4 projects that are
     multi-language in nature, revealed that the Complex Conditional smell comprises
     between 32\% and 51\% of the detected code smells.
     %
-    % The experiments also revealed that the Complex Conditional smell comprises
-    %
     The results also showed that Long Method smells make up 38\% of all those
-    detected for JavaScript programs and Long Class code smells constitute 30\% of those
-    found in Java programs.
+    detected for JavaScript programs and Long Class code smells constitute 30\% of
+    those found in Java programs.
     Finally, the experiments uncovered evidence of each programming language having
     code smells that are more common for it than the other studied languages.
     %
-    % that are significantly more common than the languages, suggesting
-    % a connection between code smells and programming languages.
-    % % that
-    % % they have strong tendencies to have specific code smells.
-
 \end{abstract}
