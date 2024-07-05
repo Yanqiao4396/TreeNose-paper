@@ -6,41 +6,57 @@
 
 % Explain the basics of code smells and their importance and prevalence
 
-{\bf Code Smells}. Originating from Fowler and Beck's \textit{Refactoring}
-book, code smells are important considerations for both researchers and
-practitioners. The research community has defined numerous code smells
-\cite{Pysmell,SQLAntipatterns,CleanCode,RefactoringWorkbook}, with Jerzyk
-recently releasing an online catalog with 56 common code smells
-\cite{Jerzyk2023}. At the same time, Yamashita investigated the effects of code
-smells on maintainability (e.g., \cite{6392174, 6405287}) and studied
-developers' opinion of code smells \cite{developersCare}, ultimately
-identifying what real-world developers consider the top 15 most common code
-smells. Moreover, Tufano~\etal{} \cite{whenandwhy} and Peters and
+{\bf Code Smells}. Originating from Fowler and Beck's \textit{Refactoring} book,
+code smells are important considerations for both researchers and practitioners.
+The research community has defined numerous code
+smells~\cite{Pysmell,SQLAntipatterns,CleanCode,RefactoringWorkbook}, with Jerzyk
+recently releasing an online catalog with 56 common code smells~\cite{Jerzyk2023}. At the same time, Yamashita investigated the effects of code
+smells on maintainability (e.g.,~\cite{6392174, 6405287}) and studied
+developers' opinion of code smells~\cite{developersCare}, ultimately identifying
+what real-world developers consider the top 15 most common code smells.
+Moreover, Tufano~\etal{}~\cite{whenandwhy} and Peters and
 Zaidman~\cite{lifespan} characterized the lifespan of code smells in software
 projects. Finally, Santana~\etal{} found that strong agglomerations of certain
-code smells often occur in software projects \cite{Santana} and
-Pascarella~\etal{} showed that code reviews significantly reduce the severity
-of code smells \cite{Pascarella}.
+code smells often occur in software projects~\cite{Santana} and
+Pascarella~\etal{} showed that code reviews significantly reduce the severity of
+code smells~\cite{Pascarella}.
 
-{\bf Code Smell Detection}. Because of the negative impact of code smells on
-software projects, developers acknowledge the importance of detecting them. The
-manual code smell detection was proven to be error-prone and resource-consuming
-\cite{DetectingDefectsInObject}. Therefore, code smell detection tools have been
-developed to automate this process. Different code smell detection tools rely on
-various detection strategies, such as abstract syntax tree (AST) analysis,
-Machine Learning, and Static Analysis. Van Emden and Moonen built the first code
-smell detection tool in Java \cite{1173068}. Since then, many language-specific
-code smell detection tools have been developed, such as PMD \cite{PMD} and
-CheckStyle \cite{CheckStyle}. Chen \cite{Pysmell} built a code smell detection
-tool in Python targeting on Python specific code smells. All the tools mentioned
-above rely on AST to detect code smells. Except AST-based detection, There are
-also developers utilizing approaches like Machine Learning and textual
-components. For example, Pontillo utilized Machine Learning to detect test
-smells, similar to code smell, to achieve better performance than
-heuristic-based techniques, but had a challenge of overcoming F1 score of 0.51.
-Palomba~\etal{} designed a text-based code smell technique to detect code smells
-and found the benefits of combining textual and structural information in code
-smell detection \cite{Palomba}.
+% Cut content:
+
+% Therefore, code smell detection tools have been developed to automate this
+% process. Different code smell detection tools rely on various detection
+% strategies, such as abstract syntax tree (AST) analysis, Machine Learning, and
+% Static Analysis. Van Emden and Moonen built the first code smell detection
+% tool in Java \cite{1173068}.
+
+{\bf Code Smell Detection}. Due to their negative influence on software quality,
+developers acknowledge the importance of detecting code
+smells~\cite{developersCare} even though manual code smell detection is both
+error-prone and resource-consuming~\cite{DetectingDefectsInObject}.
+%
+To automate this process, different code smell detection tools rely on detection
+methods like abstract syntax tree (AST) analysis~\cite{Lenarduzzi2023}, textual
+analysis~\cite{Palomba}, or machine learning~\cite{ML}.
+%
+Open-source developers have created many language-specific smell detection
+tools, also called linters (e.g., PMD~\cite{PMD} and
+CheckStyle~\cite{CheckStyle}), while researchers made ones like
+PySmell~\cite{Pysmell}.
+
+% Cut content:
+
+% built a code smell detection tool in Python targeting on
+% Python specific code smells.
+
+% All the tools mentioned
+% above rely on AST to detect code smells. Except AST-based detection, there are
+% also developers utilizing approaches like Machine Learning and textual
+% components. For example, Pontillo utilized Machine Learning to detect test
+% smells, similar to code smell, to achieve better performance than
+% heuristic-based techniques, but had a challenge of overcoming F1 score of 0.51.
+% Palomba~\etal{} designed a text-based code smell technique to detect code smells
+% and found the benefits of combining textual and structural information in code
+% smell detection \cite{Palomba}.
 
 % TODO: Reference Saavedra 2023 paper; it uses an intermediate representation
 
