@@ -115,63 +115,96 @@ and tagged them as not detected in the calculation of the F1 score of the other
 tools. We made this decision because the other tools silently failed to detect
 those code smells.
 
-
-To answer the RQ2 and RQ3, we implemented \texttt{TreeNose} in up to 20
+%Change 20 to 16 to match up with the Table II
+To answer the RQ2 and RQ3, we implemented \texttt{TreeNose} in up to 16
 open-source projects, including the subjects in RQ1. We analyzed software
 projects written in 3 selected programming languages, and ones in the
-combination of the selected programming languages. We implemented
-\texttt{TreeNose} in the projects and analyzed the occurrence of each code
-smell in the projects. Analyzing the code smell reports of \texttt{TreeNose}
+% The phrase "the combination of the selected languages" is redundant.
+combination of them. 
+% Redundant sentence 
+%We implemented \texttt{TreeNose} in the projects and analyzed the occurrence of each code
+% smell in the projects.
+ Analyzing the code smell reports of \texttt{TreeNose}
 helps to understand the distribution and prevalence of the selected code smells
-in different programming languages, and furthermore the target languages'
+in different programming languages, and the target languages'
 tendencies to contain specific code smells.
 
-To minimize the bias introduced by the different sizes of the projects in the
-RQ2, we calculate the number of each code smell in individual projects
-($s_{k}$) and divide it by the total number of code smells in that project
-({$S$}) to calculate the project-level percentage of the code smell. Then we
-the sum of the project-level percentages in the projects in the language, and
-divide it by the number of the projects in the language ($N_r$) to calculate
-the percentage of the code smell in the language ($P_{k}$).
+% RQ2, we calculate the number of each code smell in individual projects
+% ($s_{k}$) and divide it by the total number of code smells in that project
+% ({$S$}) to calculate the project-level percentage of the code smell. Then we
+% the sum of the project-level percentages in the projects in the language, and
+% divide it by the number of the projects in the language ($N_r$) to calculate
+% the percentage of the code smell in the language ($P_{k}$).
 
-In the experiment of the RQ2, we calculate the percentage of each code smell
-out of all the selected code smells as follows:
+% In the experiment of the RQ2, we calculate the percentage of each code smell
+% out of all the selected code smells as follows:
+
+
+% Specify the purpose of Equation 4 at beginning to reinforce the relationship btw the equation and the RQ2
+We calculated the distribution of each code smell ($P_{s}$) with the percentage formula show in the Equation~\ref{eq:percentage}.
+To minimize the bias introduced by the different sizes of the projects in the
+RQ2, the percentage of the code smell in was calculated in each project and then averaged in the projects in the language.
+We divided the number of each code smell in a project
+($m_{k}$) by the number of all kinds of code smells in that project
+({$M_{k}$}) to calculate the project-level percentage. Then we took
+the sum of the project-level percentages and
+divided the sum by the number of the projects in the language ($k$) to calculate
+$P_{s}$.
 
 \vspace{-1em}
 
 \begin{equation}
-P_{s} = \left( \sum_{1}^{k}\frac{{s_{k}}}{S_{k}} \right) \div {N_r} \times 100\%
+P_{s} = \left( \sum_{1}^{k}\frac{{m_{k}}}{M_{k}} \right) \div {k} \times 100\%
+\label{eq:percentage}
 \end{equation}
 
-As for the RQ3, we would like to quantify the prevalence of the code smells as
-the occurrence of the code smells in each 1000 lines of code on average
-($C_{s}$). To calculate it, we divide the number of each code smell in
-individual projects ($s_{k}$) by the total number of lines in the project
-($N_{l}$) to calculate the project-level prevalence of the code smell, and
-then take the average of the occurrences in each project. Finally by taking the
-average of the occurrences in the projects in the language, we calculate the
-prevalence of the code smell in the language as follows:
+% As for the RQ3, we would like to quantify the prevalence of the code smells as
+% the occurrence of the code smells in each 1000 lines of code on average
+% ($C_{s}$). To calculate it, we divide the number of each code smell in
+% individual projects ($s_{k}$) by the total number of lines in the project
+% ($N_{l}$) to calculate the project-level prevalence of the code smell, and
+% then take the average of the occurrences in each project. Finally by taking the
+% average of the occurrences in the projects in the language, we calculate the
+% prevalence of the code smell in the language as follows:
+
+
+As for the RQ3, we quantified the prevalence of a code smell as
+the average occurrence of the code smell in each 1000 lines of code
+($C_{s}$) shown in the Equation~\ref{eq:prevalence}.
+Within this equation, we divided the number of a code smell in
+one project ($m_{k}$) by the total number of lines in the project
+($N_{k}$) to calculate the project-level occurrence of the code smell, and
+then calculate language-level occurrence score ($C_{s}$) by averaging the project-level occurrences
+in the projects in the language and multiplying the result by 1000.
 
 \vspace{-1.0em}
 
 \begin{equation}
-C_{s} = \left( \sum_{1}^{k}{\frac{s_{k}}{N_l}_{k}}} \right) \div N_r
+C_{s} = \left( \sum_{1}^{k}{\frac{m_{k}}{N_{k}}} \right) \div k \times 1000
+\label{eq:prevalence}
 \end{equation}
 
-With the prevalence score $C_{s}$, we want to quantify how much one language
-outperforms the others. Therefore, we utilized the discrepancy formula to
-calculate the occurrence discrepancy score. We compared the occurrence of one
-language ($C_{s}$) against the same code smell in the combination of the other
-programming languages ($C_{O}$). We calculate the occurrence discrepancy score
-(D) of each code smell in the projects as follows:
+% With the prevalence score $C_{s}$, we want to quantify how much one language
+% outperforms the others. Therefore, we utilized the discrepancy formula to
+% calculate the occurrence discrepancy score. We compared the occurrence of one
+% language ($C_{s}$) against the same code smell in the combination of the other
+% programming languages ($C_{O}$). We calculate the occurrence discrepancy score
+% (D) of each code smell in the projects as follows:
+
+With the occurrence score $C_{s}$, we utilized the discrepancy formula shown in the Equation~\ref{eq:discrepancy}
+to quantify performance differences between the selected programming languages in the RQ3. We calculated the difference with the occurrence of
+a code smell in one
+language ($C_{s}$) minus the same code smell in the combination of the other languages ($C_{O}$), and calculated the occurrence discrepancy score
+(D) by dividing $C_{O}$.
 
 \vspace{-1.0em}
 
 \begin{equation}
     D = (C_{O} - C_{s}) \div C_{O}
+    \label{eq:discrepancy}
 \end{equation}
 
-In this equation, a positive score indicates that the code smell occurs less
+In the Equation~\ref{eq:discrepancy}, a positive score indicates that the code smell occurs less
 frequently in the language than the other languages, while a negative score
 indicates that the code smell occurs more frequently in the language than the
 other languages. The discrepancy score has a range of negative infinity to 1,
