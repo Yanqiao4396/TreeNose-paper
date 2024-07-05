@@ -130,24 +130,24 @@ and tagged them as not detected in the calculation of the F1 score of the other
 tools. We made this decision because the other tools silently failed to detect
 those code smells.
 
-% Change 20 to 16 to match up with the Table II
-% Remove "up to" 16 to make it precise
-To answer the RQ2 and RQ3, we implemented \texttt{TreeNose} in 16
-open-source projects, including the subjects in RQ1. We analyzed software
-projects written in 3 selected programming languages, and ones in the
+% Change 20 to 16 to match up with the Table II Remove "up to" 16 to make it
+% precise
+To answer the RQ2 and RQ3, we implemented \texttt{TreeNose} in 16 open-source
+projects, including the subjects in RQ1. We analyzed software projects written
+in 3 selected programming languages, and ones in the
 %
 % The phrase "the combination of the selected languages" is redundant.
 %
 combination of them.
 %
 % Redundant sentence
-%We implemented \texttt{TreeNose} in the projects and analyzed the occurrence of each code
-% smell in the projects.
+%We implemented \texttt{TreeNose} in the projects and analyzed the occurrence
+%of each code smell in the projects.
 %
-Analyzing the code smell reports of \texttt{TreeNose}
-helps to understand the distribution and prevalence of the selected code smells
-in different programming languages, and the target languages'
-tendencies to contain specific code smells.
+Analyzing the code smell reports of \texttt{TreeNose} helps to understand the
+distribution and prevalence of the selected code smells in different
+programming languages, and the target languages' tendencies to contain specific
+code smells.
 
 % RQ2, we calculate the number of each code smell in individual projects
 % ($s_{k}$) and divide it by the total number of code smells in that project
@@ -227,15 +227,16 @@ with discrepancy scores are shown in Table~\ref{tab:occurrence_table}.
     \label{eq:discrepancy}
 \end{equation}
 
-In the Equation~\ref{eq:discrepancy}, a positive score indicates that the code smell occurs less
-frequently in the language than the other languages, while a negative score
-indicates that the code smell occurs more frequently in the language than the
-other languages. The discrepancy score has a range of negative infinity to 1,
-where 1 means the code smell doesn't occur in the language at all, and 0 means
-the code smell occurs in the language as frequently as the other languages.
+In the Equation~\ref{eq:discrepancy}, a positive score indicates that the code
+smell occurs less frequently in the language than the other languages, while a
+negative score indicates that the code smell occurs more frequently in the
+language than the other languages. The discrepancy score has a range of
+negative infinity to 1, where 1 means the code smell doesn't occur in the
+language at all, and 0 means the code smell occurs in the language as
+frequently as the other languages.
 
 {\bf Threats to Validity}. The definition of code smell, code that is hard to
-subjective, which is one of the main concerns in this research. 
+subjective, which is one of the main concerns in this research.
 We noted that various code smell detection tools
 utilize different metrics and thresholds to detect the same code smell.
 Therefore, the metrics of \texttt{TreeNose} may not be consistent with the
@@ -245,17 +246,20 @@ mitigate the threats, we conducted an annotation study with 2 internal authors t
 evaluate the performance of \texttt{TreeNose} in detecting code smells.
 
 % Remove the sentence cuz it's redundant with the end of last paragraph
-% """Another threat is related to the annotation study. To evaluate the performance
-% of \texttt{TreeNose}, we conducted an annotation study with 2 developers.
-% """
-Another threat is related to the annotation study. With the limited number of developers in the study, the results may not be
-generalizable to all developers. We also noted that the amount of subjects and
-samples are limited in the study. Though we ensured the subjects are actively
-used and well-maintained, the results may still not be generalizable to all
-software projects in the target language. We plan to conduct more studies
-with more developers and subjects in the future.
+% """Another threat is related to the annotation study. To evaluate the
+% performance of \texttt{TreeNose}, we conducted an annotation study with 2
+% developers. """
+%
+Another threat is related to the annotation study. With the limited number of
+developers in the study, the results may not be generalizable to all developers.
+We also noted that the amount of subjects and samples are limited in the study.
+Though we ensured the subjects are actively used and well-maintained, the
+results may still not be generalizable to all software projects in the target
+language. We plan to conduct more studies with more developers and subjects in
+the future.
 
-% Note: in my view, the third threat is not a threat to validity but a limitation, so we may delete it?
+% Note: in my view, the third threat is not a threat to validity but a
+% limitation, so we may delete it?
 
 % The third threat is related to the limitation of the selected code smell
 % detectors. They didn't detect all the selected code smells, and the results may
@@ -265,10 +269,14 @@ with more developers and subjects in the future.
 
 \input{tables/percentage_table}
 
-The last threat is due to our decision of including the test code in the
-analysis. Test code is important for developers to comprehend and maintain in 
-the software development, but
-it usually obeys different conventions and styles from the source code. Therefore,
-the same detection thresholds in TreeNose are mainly designed for the source code
-, which may not be optimal for the test code. 
-To mitigate the threats, we plan to conduct studies with the test code excluded in the future.
+% Test code may be different than source code of the program
+
+The last threat is due to the decision to include the test code --- along with
+the source code of the program under test --- in the analysis used to answer
+each research question. While test code is important for developers to
+comprehend and maintain in the software development, it may adhere to different
+conventions and styles from the program's source
+code~\cite{Kapfhammer2004,Kapfhammer2010}. This means that the detection
+thresholds of Table~\ref{tab:metrics-and-thresholds}, which are mainly designed
+for a program's source code, may not be ideal for the test code. To mitigate
+this threat, we plan to conduct future studies that excluding the test code.
