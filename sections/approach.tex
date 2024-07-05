@@ -46,50 +46,37 @@ code smells, as depicted in Figure~\ref{fig:architecture} and described in the
 following list of smell detection steps:
 
 \begin{itemize}[leftmargin=*]
-	%
+    %
+    % Step 1: Extract Source Code
+    %
     \item \textbf{Step 1: Extract Source Code}: Extract source code written in
         the specified programming language, fetching every target files unless
         it or its containing path is in the ignore list.
-	      %
+        %
+        % Step 2: Parse Source Code to AST; note the decoupling
+        %
     \item \textbf{Step 2: Parse Source Code to AST}: Using Treesitter and its
         bindings for 18 languages, \texttt{TreeNose} parses the program's source
         code into an AST~\cite{treeSitter}. Adopting Treesitter decouples the
         parsing from the programming language's grammar, making it possible to
         parse multiple-language projects and various projects implemented in
         different languages.
-	      %
+        %
+        % Step 3: Analyze AST to Detect Code Smells;
+        % make sure to come clean about the manual mapping,
+        % but make it clear that it is relatively simple
+        %
     \item \textbf{Step 3: Analyze AST to Detect Code Smells}: To enable this
         automated step, we manually mapped the AST nodes reported by Treesitter
-        to a language-independent categorization, thereby enabling
+        to a simple, language-independent categorization, thereby enabling
         \texttt{TreeNose} to adopt the same detection process for nodes in the
         same group across multiple programming languages. During this step,
         \texttt{TreeNose} queries the AST and searches for the associated
-        components in AST. When it finds a component like a method definition or
-        a function call, \texttt{TreeNose} determines whether or not it is a
+        components. When it finds a component, like a method definition or a
+        method call chain, \texttt{TreeNose} determines whether or not it is a
         code smell according to the thresholds given in
         Table~\ref{tab:metrics-and-thresholds}.
-
-        % shows the detection metrics with default thresholds for each code smell.
-        % Finally, \texttt{TreeNose} generates reports with the list of code
-        % smells detected in the project.
-
-        % \texttt{TreeNose}
-        % analyzes AST to detect code smells. Before the analysis, our developers
-        % categorize the language-specific Treesitter AST nodes like method and
-        % function across programming languages into language-independent groups.
-        % This categorization enables
-
-        % \texttt{TreeNose} to execute the same
-        % detection process for nodes in the same group across multiple
-        % programming languages. During the analysis, \texttt{TreeNose} queries
-        % AST and searches for the associated components in AST. When locating the
-        % components, \texttt{TreeNose} calculates the metrics against the
-        % thresholds. Table~\ref{tab:metrics-and-thresholds} shows the detection
-        % metrics with default thresholds for each code smell. Finally,
-        % \texttt{TreeNose} generates reports with the list of code smells
-        % detected in the project.
-
-	      %
+        %
 \end{itemize}
 
 \input{tables/metric_table}
