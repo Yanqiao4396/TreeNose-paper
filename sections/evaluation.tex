@@ -1,5 +1,3 @@
-\input{tables/subject_table}
-
 \section{Experimental Evaluation of TreeNose}~\label{sec:evaluation}
 
 \vspace*{-1em}
@@ -14,7 +12,6 @@ programming languages. To achieve so, we implemented \texttt{TreeNose} in at
 least 15 open-source projects, including ones written in the combination of the
 selected languages. We designed the following research questions:
 
-\input{tables/annotation_table}
 
 {\it RQ1: How does \texttt{TreeNose} perform in different languages?} This RQ
 aims to evaluate the accuracy of \texttt{TreeNose} in detecting code smells in
@@ -44,6 +41,8 @@ and therefore all the selected subjects in Python are written in Python 2. And
 as for the contents of those projects, we decided to include both source code
 and test code in the analysis, it's because the test code is also important for
 developer to comprehend and maintain in software development.
+
+\input{tables/subject_table}
 
 {\bf Methodology}. To answer the RQ1, we compared \texttt{TreeNose} with 3
 language-specific code smell detection tools, namely PySmell~\cite{Pysmell} for
@@ -78,6 +77,8 @@ mean of precision and recall, defined as:
 \begin{equation}
     F1 = 2 * \frac{Precision * Recall}{Precision + Recall}
 \end{equation}
+
+\input{tables/annotation_table}
 
 To our best knowledge, there is no annotated dataset for code smells in our
 selected programming languages, we hence had to design an annotation study by
