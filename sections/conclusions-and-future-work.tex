@@ -33,11 +33,11 @@ Using a manual annotation study, we compared the scores arising from
 Java, JavaScript, and Python,
 %
 ultimately showing that the language-specific tools yielded an F1 score of 0.48
-in comparison to a score of 0.94 from \texttt{TreeNose}.
+in comparison to an F1 score of 0.94 from \texttt{TreeNose}.
 
 Building on this compelling result and \texttt{TreeNose}'s capability to
-uniformly detect code smells both across projects in different languages and in
-multi-language projects, we further used the presented tool to study the
+uniformly detect code smells both across projects in different languages
+and in multi-language projects, we further used the presented tool to study the
 prevalence of code smells.
 %
 This analysis revealed interesting findings, including the fact that, among the
@@ -46,10 +46,15 @@ comprising 42\% of the detected smells, including 50\% of those in
 multi-language projects.
 
 % Define the future work now that we've shown the tool is so great
+% (a) the standard "more of everything"
+% (b) highlight that the tool is released
+% (c) explain that we want to conduct human studies
 
-In the future, we plan to extend \texttt{TreeNose} to detect more code smells
-and evaluate it with more programming language systems. As for annotation, we
-plan to conduct studies with more participants and subjects to increase the
-reliability of the results. We also wish to implement \texttt{TreeNose} in a
-real-world software development environment to see how it can help developers
-maintain the quality of their codebase.
+Building on these emerging results, we intend to extend \texttt{TreeNose} to
+detect more code smells and then evaluate it with both more programming
+languages and projects. To extend the manual annotation study, we will engage
+additional human annotators to examine more code smells from more projects,
+yielding a data set for future studies.
+%
+Leveraging \texttt{TreeNose}'s open-source release at \texttt{\GitHubLink{}},
+we also plan to study how developers use it to detect code smells.
