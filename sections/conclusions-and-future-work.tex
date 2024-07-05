@@ -1,25 +1,44 @@
 \section{Conclusions and Future Work}
 
-In this paper, we presented \texttt{TreeNose}, a language-independent code
-smell detection tool. \texttt{TreeNose} uses TreeSitter AST to detect code
-smells without the need for language-specific rules. \texttt{TreeNose} can
-detect 5 code smells: Complex Conditional (CC), Long Class (LC), Long Method
-(LM), Long Method Chain (LMC), and Long Parameter List (LPL). We evaluated
-\texttt{TreeNose} with an annotation study in three programming language
-system, i.e., Java, JavaScript, and Python, and compared it with other
-language-specific tools in a set of high-quality open-source projects in target
-programming languages. As a result, \texttt{TreeNose} achieved a high level of
-accuracy with 0.94 F1 score in detecting selected code smells. As a comparison,
-the combination of other tools achieved 0.48 F1 score. We concluded
-\texttt{TreeNose} is an effective tool for detecting code smells across
-programming language systems. We also analyzed the distribution and prevalence
-of code smells in the programming language systems with \texttt{TreeNose}. As
-results of the analysis, we found that 1. Complex Conditional (CC) is the most
-common code smell across programming languages with 42\% average proportion. 2.
-Programming languages have strong tendencies in some code smells with at least
-1 time worse performance than others. 3. systems written in multi-language have
-weaker tendencies in code smells compared to the single language systems with
-zero negative values less than - 1.0.
+% Removed this text and replace it with content that is a little shorter:
+
+% with an annotation study in three programming language system, i.e., Java,
+% JavaScript, and Python, and compared it with other language-specific tools in
+% a set of high-quality open-source projects in target programming languages.
+
+% As a result, \texttt{TreeNose} achieved a high level of
+% accuracy with 0.94 F1 score in detecting selected code smells. As a comparison,
+% the combination of other tools achieved 0.48 F1 score. We concluded
+% \texttt{TreeNose} is an effective tool for detecting code smells across
+% programming language systems. We also analyzed the distribution and prevalence
+% of code smells in the programming language systems with \texttt{TreeNose}.
+
+% Review the TreeNose tool, experimental setup, and the results
+
+This paper presents \texttt{TreeNose}, a language-independent code smell
+detection tool that leverages industry-standard Treesitter parsers.
+\texttt{TreeNose} detects 5 code smells that other language-specific tools
+(e.g., PySmell and JScent) commonly support: Complex Conditional (CC), Long
+Class (LC), Long Method (LM), Long Method Chain (LMC), and Long Parameter List
+(LPL).
+%
+Using a manual annotation study, we compared \texttt{TreeNose}'s, precision,
+recall, and F1 score to the scores arising from predictions made with the
+language-specific smell detectors for Java, JavaScript, and Python.
+%
+This experiment revealed that the classifications with the language-specific
+tools yield an F1 score of 0.48 in comparison to \texttt{TreeNose}'s
+classifications leading to an F1 score of 0.94.
+
+
+
+%
+As results of the analysis, we found that 1. Complex Conditional (CC) is the
+most common code smell across programming languages with 42\% average
+proportion. 2. Programming languages have strong tendencies in some code smells
+with at least 1 time worse performance than others. 3. systems written in
+multi-language have weaker tendencies in code smells compared to the single
+language systems with zero negative values less than - 1.0.
 
 In the future, we plan to extend \texttt{TreeNose} to detect more code smells
 and evaluate it with more programming language systems. As for annotation, we
