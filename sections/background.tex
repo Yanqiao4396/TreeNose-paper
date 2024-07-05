@@ -58,24 +58,38 @@ PySmell~\cite{Pysmell}.
 % and found the benefits of combining textual and structural information in code
 % smell detection \cite{Palomba}.
 
+% Since modern software systems use
+% ~\cite{723183}.
+
+% It's one feature of modern software development to use multiple programming
+% languages%
+
 % TODO: Reference Saavedra 2023 paper; it uses an intermediate representation
 
-{\bf Multi-Language Code Smells}. It's one feature of modern software
-development to use multiple programming languages~\cite{723183}. Developers
-utilize multiple programming languages to leverage their
-strengths~\cite{7476675}.
+{\bf Multi-Language Code Smells}.
 %
-Common code smells are broadly recognized across programming languages
-\cite{PMD,CheckStyle,Pysmell,Jscent,DesigniteJava}. There are also researchers
-who have conducted studies to investigate code smells in multi-language
-systems. Abidi~\etal{} defined 12 multi-language design smells (i.e., code
-smells and anti-patterns) \cite{MultiLanguageCodeSmells}. They discovered that
-multi-language code smells commonly raise during the maintenance and
-refactoring activities and have a strong negative impact on software quality
-\cite{Abidi2}. They also built a multi-system code smell detection tool with
-srcML (a multi-language parsing tool to convert source code into XML), to
-detect design smells in multi-language systems. They suggested that
-multi-language design smells are prevalent in multi-language systems and have a
-strong negative impact on software readability \cite{Fault-Prone}. Nagy and
-Cleve built a SQL code smell detection tool for SQL statements embedded in Java
-code \cite{SQLInJava}.
+Since developers mix and match the best features of programming
+languages~\cite{7476675}, real-world software is often multiple-language in
+nature~\cite{723183}.
+%
+Although many language-specific smell detectors find similar code
+smells~\cite{PMD,CheckStyle,Pysmell,Jscent,DesigniteJava}, they do so with
+different internal representations and default configurations and are thus not
+directly applicable to either multi-language projects or across different
+languages.
+%
+In response, smells in multi-language systems. Abidi~\etal{} defined 12
+multi-language design smells (i.e., code smells and anti-patterns)
+\cite{MultiLanguageCodeSmells}. They discovered that multi-language code smells
+commonly raise during the maintenance and refactoring activities and have a
+strong negative impact on software quality \cite{Abidi2}. They also built a
+multi-system code smell detection tool with srcML (a multi-language parsing tool
+to convert source code into XML), to detect design smells in multi-language
+systems.
+
+They suggested that multi-language design smells are prevalent in
+multi-language systems and have a strong negative impact on software
+readability \cite{Fault-Prone}.
+
+Nagy and Cleve built a SQL code smell detection tool for SQL statements
+embedded in Java code \cite{SQLInJava}.
