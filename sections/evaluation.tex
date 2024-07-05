@@ -14,6 +14,8 @@ programming languages. To achieve so, we implemented \texttt{TreeNose} in at
 least 15 open-source projects, including ones written in the combination of the
 selected languages. We designed the following research questions:
 
+\input{tables/annotation_table}
+
 {\it RQ1: How does \texttt{TreeNose} perform in different languages?} This RQ
 aims to evaluate the accuracy of \texttt{TreeNose} in detecting code smells in
 different programming languages. We selected 3 language-specific code smell
@@ -42,6 +44,7 @@ and therefore all the selected subjects in Python are written in Python 2. And
 as for the contents of those projects, we decided to include both source code
 and test code in the analysis, it's because the test code is also important for
 developer to comprehend and maintain in software development.
+
 
 {\bf Methodology}. To answer the RQ1, we compared \texttt{TreeNose} with 3
 language-specific code smell detection tools, namely PySmell~\cite{Pysmell} for
@@ -112,6 +115,7 @@ and tagged them as not detected in the calculation of the F1 score of the other
 tools. We made this decision because the other tools silently failed to detect
 those code smells.
 
+
 To answer the RQ2 and RQ3, we implemented \texttt{TreeNose} in up to 20
 open-source projects, including the subjects in RQ1. We analyzed software
 projects written in 3 selected programming languages, and ones in the
@@ -164,7 +168,7 @@ programming languages ($C_{O}$). We calculate the occurrence discrepancy score
 \vspace{-1.0em}
 
 \begin{equation}
-    D = \frac{C_{O} - C_{s}}{C_{O}}
+    D = (C_{O} - C_{s}) / C_{O}
 \end{equation}
 
 In this equation, a positive score indicates that the code smell occurs less
@@ -173,10 +177,6 @@ indicates that the code smell occurs more frequently in the language than the
 other languages. The discrepancy score has a range of negative infinity to 1,
 where 1 means the code smell doesn't occur in the language at all, and 0 means
 the code smell occurs in the language as frequently as the other languages.
-
-\input{tables/annotation_table}
-
-% \subsection{Threats to Validity}~\label{sec:threats-to-validity}
 
 {\bf Threats to Validity}. The definition of code smell, code that is hard to
 subjective. Therefore, one of concerns in this research is on the definitions
