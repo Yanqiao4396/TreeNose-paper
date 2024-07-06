@@ -214,11 +214,13 @@ Tables~\ref{tab:percentage_table} and~\ref{tab:occurrence_table}.
 
 We calculated the distribution of each code smell, denoted $P_{s}$, with the
 percentage formula given by Equation~\ref{eq:percentage}. To minimize the bias
-introduced by the different project sizes, the percentage of the code smell in
-each project was calculated and then averaged for the projects in that language.
+introduced by the different project sizes (i.e., KLOC in
+Table~\ref{tab:subject_table}), the percentage of the code smell in each project
+was calculated and then averaged for the projects implemented with that
+programming language.
 %
 We divided the number of each code smell in a project ($m_{k}$) by the number of
-all kinds of code smells in that project ({$M_{k}$}) to calculate the
+all kinds of code smells in that project ({$M_{k}$}), thus calculating the
 project-level percentage. We then took the sum of the project-level percentages
 and divided it by the number of the projects in the language ($k$) to calculate
 $P_{s}$. The results associated with these percentages are shown in
@@ -265,7 +267,7 @@ C_{s} = \left( \sum_{1}^{k}{\frac{m_{k}}{N_{k}}} \right) \div k \times 1000
 
 Leveraging the code smell occurrence score $C_{s}$ from
 Equation~\ref{eq:prevalence}, we calculated the discrepancy formula shown in the
-Equation~\ref{eq:discrepancy} to quantify the performance differences between
+Equation~\ref{eq:discrepancy} to quantify the classification differences between
 the selected programming languages and thereby answer RQ3.
 %
 We calculated the difference with the occurrence of a code smell in one language
