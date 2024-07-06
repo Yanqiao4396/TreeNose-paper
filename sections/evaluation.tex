@@ -284,10 +284,15 @@ Table~\ref{tab:occurrence_table}.
 In the Equation~\ref{eq:discrepancy}, a positive score indicates that the code
 smell occurs less frequently in the language than the other languages, while a
 negative score indicates that the code smell occurs more frequently in the
-language than the other languages. The discrepancy score has a range of
-negative infinity to 1, where 1 means the code smell doesn't occur in the
-language at all, and 0 means the code smell occurs in the language as
-frequently as the other languages.
+language than the other languages.
+%
+To represent this clearly in Table~\ref{tab:occurrence_table}, we use $\uparrow$
+to designate a positive value for this metric and $\downarrow$ for a negative
+one.
+%
+With that said, the discrepancy score has a range of negative infinity to 1,
+where 1 means the code smell doesn't occur in the language at all and 0 means
+the code smell occurs in the language as frequently as the other languages.
 
 {\bf Threats to Validity}. The definition of code smell, code that is hard to
 subjective, which is one of the main concerns in this research.
