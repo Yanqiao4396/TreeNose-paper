@@ -42,20 +42,28 @@ This paper's experiments answer these research questions:
 
 % Introduce the subjects
 
-{\bf Subjects}. To answer the RQs, the subjects must stand for the real-world
-software projects in their respective programming languages. They should be
-actively used and contain a large amount of code. To achieve this goal, the
-subjects in the experiments are 1. have commits on main branch in the last
-year, 2. have at least 10 thousands lines of code (KLOC), and 3. have more than
-1,000 stars on GitHub. Within those constraints, we selected 3 subjects for
-each programming language, Java, JavaScript, and Python, respectively.
-Table~\ref{tab:subject_table} shows the characteristics of the subjects. All
-the subjects have been proven to have commits on main branch in the last year.
-Though TreeNose supports both Python 2 and 3, PySmell only supports Python 2
-and therefore all the selected subjects in Python are written in Python 2. And
-as for the contents of those projects, we decided to include both source code
-and test code in the analysis, it's because the test code is also important for
-developer to comprehend and maintain in software development.
+{\bf Subjects}. To empirically answer these three RQs, we applied
+\texttt{TreeNose} to real-world open-source projects that met the following
+criteria: (i) have commits on main branch in the last year; (ii) have at least
+10 thousand lines of code; (iii) have more than 1,000 stars on GitHub; and (iv)
+have an implementation entirely in one of Java, JavaScript, or Python or,
+alternatively, a multi-language implementation using one or more of the three
+aforementioned languages.
+%
+To answer RQ1, we picked the 9 projects in the top half of
+Table~\ref{tab:subject_table}.
+%
+It is worth noting that, even though \texttt{TreeNose} supports both Python
+versions 2 and 3, PySmell only supports Python version 2, thereby necessitating
+that all of the Python-based projects must be written in version 2 of Python.
+%
+In support of the answer to RQ2 and RQ3, the bottom half of
+Table~\ref{tab:subject_table} includes one more project in each of the three
+chosen languages and four additional multi-language projects.
+%
+Finally, we performed smell detection on the source code of both the program
+and the test suite because the test code is also important for a developer to
+comprehend and maintain in software development~\cite{ML}.
 
 \input{tables/subject_table}
 
