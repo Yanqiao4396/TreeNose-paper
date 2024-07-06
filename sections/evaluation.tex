@@ -105,35 +105,59 @@ mean of precision and recall, defined as:
 
 Since, to our best knowledge, there is no annotated code smell dataset for our
 unique combination of projects implemented in both the three languages and in a
-multi-language fashion, we designed a manual annotation study.
+multi-language fashion, we designed a manual annotation study inspired by the
+design of Palomba~\etal's experiment~\cite{Palomba2018}.
 %
 To complete this study we first applied both \texttt{TreeNose} and the other
 tools with their default thresholds to analyze the projects in the top half of
 Table~\ref{tab:subject_table}.
 %
 To facilitate a comparison between the presented tool and the language-specific
-smell detectors, we first set \texttt{TreeNose} as the ``baseline'' detector
-and randomly sampled 5 examples of each code smell.
+smell detectors, we first set \texttt{TreeNose} as the ``baseline'' detector and
+randomly sampled 5 code segments for each smell.
 %
-Next, the authors of this paper independently inspected these code smells and
-determined whether, from a developer's perspective, they were valid not.
+Next, the authors of this paper independently inspected these flagged code
+smells and determined whether, from a developer's perspective, they were valid
+not.
 %
 The authors then discussed their independent classifications until a consensus
 emerged as to whether the detected code smells were valid or
 not~\cite{Cruzes2011}.
 %
 We designated a \textit{True Positive} for \texttt{TreeNose} when both the
-authors and \texttt{TreeNose} classified the randomly selected code as a smell;
+authors and \texttt{TreeNose} classified the randomly selected code as a smell
 and a \textit{False Positive} for \texttt{TreeNose} when we did not classify it
-as a code smell and the presented tool did.
+as a code smell and yet the presented tool did.
 %
-When \texttt{TreeNose} was the baseline, we designated a \textit{False
-Negative} for the language-specific detector the developers but not by
-\texttt{TreeNose}.
+When \texttt{TreeNose} was the baseline technique, we designated a \textit{False
+Negative} for the language-specific detector when it did not classify the source
+code as a smell but we did.
 %
 At this step in the manual annotation study, we calculated the precision for
 both \texttt{TreeNose} and the language-specific detector and both recall and
 the F1 score for the language-specific detector.
+
+The next step of the manual annotation study set the language-specific tool as
+the baseline technique and randomly sampled 5 source code segments that it
+claimed were a code smell.
+%
+Analogous to the prior setup, this configuration enabled us to calculate
+precision for both the language-specific smell detector and \texttt{TreeNose}
+and to additionally calculate recall and the F1 score for \texttt{TreeNose}.
+%
+In the absence of data set with confirmed code smell annotations, this design
+for the manual annotation study facilitated the indirect comparison between
+\texttt{TreeNose} and the other language-specific detectors.
+%
+Finally, it is important to note that not all code smells detected by
+\texttt{TreeNose} are detected by the other tools. For those code smells, we
+skipped them in the calculation of the F1 score for \texttt{TreeNose} because
+there is no detection results from the other tools, and labeled them as not
+detected in the calculation of the F1 score of the other tools. We made this
+decision because the other tools ``silently failed'' to detect these code
+smells.
+
+% Cut this content:
 
 % With those metrics, we calculated the precision, recall, and
 % F1 score of \texttt{TreeNose}. Then, we conducted the same study with the
@@ -152,18 +176,10 @@ the F1 score for the language-specific detector.
 % spreadsheet with their related source code and a column for the detection
 % decision of \texttt{TreeNose}.
 
+% By this approach, we can compare the decisions between the \texttt{TreeNose}
+% and us, where both can potentially agree or disagree with the other detectors.
 
 
-By this approach, we can compare the decisions between the \texttt{TreeNose}
-and us, where both can potentially agree or disagree with the other detectors.
-
-
-It's noteworthy that not all code smells detected
-by \texttt{TreeNose} are detected by the other tools. For those code smells, we
-skipped them in the calculation of the F1 score of \texttt{TreeNose} because
-there is no detection results from the other tools, and tagged them as not
-detected in the calculation of the F1 score of the other tools. We made this
-decision because the other tools silently failed to detect those code smells.
 
 % Change 20 to 16 to match up with the Table II Remove "up to" 16 to make it
 % precise
