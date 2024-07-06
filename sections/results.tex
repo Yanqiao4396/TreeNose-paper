@@ -2,21 +2,35 @@
 
 \input{tables/occurrence_table}
 
-{\bf Answering RQ1}. Table~\ref{tab:annotation_table} shows the confusion
-matrixes of \texttt{TreeNose} and the other tools in the annotation study. TN
-represents \texttt{TreeNose}, and LS represents the other tools. On the
-average, \texttt{TreeNose} significantly outperformed the other tools in terms
-of precision, recall, and F1 score. With the 0.94 F1 score, we conclude that
-\texttt{TreeNose} achieved a high level of accuracy in detecting the code
-smells. When there is no value in the table, it means it's not possible to
-calculate the recall. For example, \texttt{TreeNose} flagged all the positive
-when we selected samples from the \texttt{TreeNose} detection. Therefore, it's
-not possible to calculate the recall or the F1 score of \texttt{TreeNose} in
-this environment. The same applies to the LS-selected samples. Another
-interesting observation is that the LS group achieves 1.0 precision in the
-\texttt{TreeNose}-selected samples, but the recall is down to 0.32, which
-results in a low F1 score of 0.48. This indicates that the LS group can hardly
-detect all the code smells in the \texttt{TreeNose}--selected samples.
+{\bf Answering RQ1}. Table~\ref{tab:annotation_table} furnishes the evaluation
+metrics arising from the manual annotation study of \texttt{TreeNose} and the
+other language-specific tools.
+%
+In this table, TN represents \texttt{TreeNose}, and LS represents a
+language-specific tool.
+%
+When there is no value in this table, it means that it is not possible to
+calculate the recall, per the methodology described in
+Section~\ref{sec:evaluation}.
+%
+For example, when \texttt{TreeNose} was the baseline technique, it suggested
+all of the code smells from which we randomly sampled and thus it is not
+possible to calculate the recall or the F1 score of \texttt{TreeNose} in this
+environment, with the same applying to the LS-selected samples.
+%
+Overall, Table~\ref{tab:annotation_table} shows that \texttt{TreeNose}
+significantly outperformed the other tools in terms of precision, recall, and
+F1 score.
+%
+For instance, it exhibits an F1 score of 0.94 compared to one of 0.48 for the
+language-specific detectors.
+%
+Interestingly, the language-specific detectors achieve a precision of 1.0 for
+the \texttt{TreeNose}-selected samples, but their recall is down to 0.32,
+resulting in the aforementioned low F1 score of 0.48.
+
+% This indicates that the LS group can hardly detect all the code smells in the
+% \texttt{TreeNose}--selected samples.
 
 {\bf Answering RQ2}. Table~\ref{tab:percentage_table} discloses the percentage
 of the code smells in each programming language system. Looking at the table,
@@ -35,7 +49,7 @@ programming language outperforms the others in every code smell. By looking at
 each code smell, we also see programming languages have strong tendencies in
 some code smells with at least 1 time worse performance than others. For
 example, the Java system has a strong tendency in the Long Class (LC) with 1.24
-times worse performance and Long Message Chain (LMC) with 3.56 worse performance than others, 
+times worse performance and Long Message Chain (LMC) with 3.56 worse performance than others,
 while the JavaScript system has a strong
 tendency in the Long Method (LM) code smell. Python has a strong tendency in
 the Long Parameter List (LPL). Multi-Language system, on the other hand, has
