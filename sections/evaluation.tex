@@ -104,7 +104,7 @@ mean of precision and recall, defined as:
 \input{tables/annotation_table}
 
 Since, to our best knowledge, there is no annotated code smell dataset for our
-unique combination of projects implemented in both the three languages and in a
+unique combination of projects implemented both in the three languages and in a
 multi-language fashion, we designed a manual annotation study inspired by the
 design of Palomba~\etal's experiment~\cite{Palomba2018}.
 %
@@ -124,14 +124,14 @@ The authors then discussed their independent classifications until a consensus
 emerged as to whether the detected code smells were valid or
 not~\cite{Cruzes2011}.
 %
-We designated a \textit{True Positive} for \texttt{TreeNose} when both the
-authors and \texttt{TreeNose} classified the randomly selected code as a smell
-and a \textit{False Positive} for \texttt{TreeNose} when we did not classify it
-as a code smell and yet the presented tool did.
+We designated a \textit{True Positive} for \texttt{TreeNose} when the authors
+and \texttt{TreeNose} classified the randomly selected code as a smell and a
+\textit{False Positive} for \texttt{TreeNose} when we did not classify it as a
+code smell and yet the presented tool did.
 %
 When \texttt{TreeNose} was the baseline technique, we designated a \textit{False
 Negative} for the language-specific detector when it did not classify the source
-code as a smell but we did.
+code segment as a smell but we did.
 %
 At this step in the manual annotation study, we calculated the precision for
 both \texttt{TreeNose} and the language-specific detector and both recall and
@@ -145,9 +145,9 @@ Analogous to the prior setup, this configuration enabled us to calculate
 precision for both the language-specific smell detector and \texttt{TreeNose}
 and to additionally calculate recall and the F1 score for \texttt{TreeNose}.
 %
-In the absence of data set with confirmed code smell annotations, this design
-for the manual annotation study facilitated the indirect comparison between
-\texttt{TreeNose} and the other language-specific detectors.
+In the absence of an existing data set with confirmed code smell annotations,
+this design for the manual annotation study facilitated the indirect comparison
+between \texttt{TreeNose} and the other language-specific detectors.
 %
 Finally, it is important to note that not all code smells detected by
 \texttt{TreeNose} are detected by the other tools. For those code smells, we
