@@ -103,10 +103,10 @@ mean of precision and recall, defined as:
 
 \input{tables/annotation_table}
 
-Since, to our best knowledge, there is no annotated code smell dataset for our
-unique combination of projects implemented both in the three languages and in a
-multi-language fashion, we designed a manual annotation study inspired by the
-design of Palomba~\etal's experiment~\cite{Palomba2018}.
+Since, to the best of our knowledge, there is no annotated code smell dataset
+for our unique combination of projects implemented both in the three languages
+and in a multi-language fashion, we designed a manual annotation study inspired
+by the design of Palomba~\etal's experiment~\cite{Palomba2018}.
 %
 To answer RQ1, we first applied both \texttt{TreeNose} and the other tools with
 their default thresholds to analyze the projects in the top half of
@@ -118,11 +118,10 @@ randomly sampled 5 code segments for each smell.
 %
 Next, the authors of this paper independently inspected these flagged code
 smells and determined whether, from a developer's perspective, they were valid
-not.
+or not.
 %
 The authors then discussed their independent classifications until a consensus
-emerged as to whether the detected code smells were valid or
-not~\cite{Cruzes2011}.
+emerged as to whether the detected code smells were valid ones~\cite{Cruzes2011}.
 %
 We designated a \textit{True Positive} for \texttt{TreeNose} when the authors
 and \texttt{TreeNose} classified the randomly selected code as a smell and a
@@ -150,12 +149,11 @@ this design for the manual annotation study facilitated the indirect comparison
 between \texttt{TreeNose} and the other language-specific detectors.
 %
 Finally, it is important to note that not all code smells detected by
-\texttt{TreeNose} are detected by the other tools. For those code smells, we
-skipped them in the calculation of the F1 score for \texttt{TreeNose} because
+\texttt{TreeNose} are always detected by the other tools. For those code smells,
+we skipped them in the calculation of the F1 score for \texttt{TreeNose} because
 there is no detection results from the other tools, and labeled them as not
-detected in the calculation of the F1 score of the other tools. We made this
-decision because the other tools ``silently failed'' to detect these code
-smells.
+detected in the F1 score calculation for the other tools. We made this decision
+because the other tools ``silently failed'' to detect these smells.
 
 % Cut this content:
 
