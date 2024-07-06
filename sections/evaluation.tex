@@ -319,13 +319,16 @@ code smells.
 % performance of \texttt{TreeNose}, we conducted an annotation study with 2
 % developers. """
 %
-Another threat is related to the annotation study. With the limited number of
-developers in the study, the results may not be generalizable to all developers.
-We also noted that the amount of subjects and samples are limited in the study.
-Though we ensured the subjects are actively used and well-maintained, the
-results may still not be generalizable to all software projects in the target
-language. We plan to conduct more studies with more developers and subjects in
-the future.
+Another threat relates to the fact that the authors conducted the annotation
+study and their consensus may not align with the views of all developers.
+%
+Moreover, to ensure feasibility, the methodology for the manual annotation study
+only considered a limited number of samples from 9 of the 17 projects.
+%
+This means that, even though these significant open-source projects are large,
+actively used, and well-maintained, the results may still not be generalizable
+to all software projects in the target language. To address this threat, we plan
+to conduct more studies with both more annotators and projects in the future.
 
 % Note: in my view, the third threat is not a threat to validity but a
 % limitation, so we may delete it?
@@ -343,8 +346,8 @@ the future.
 The last threat is due to the decision to include the test code --- along with
 the source code of the program under test --- in the analysis used to answer
 each research question. While test code is important for developers to
-comprehend and maintain in the software development, it may adhere to different
-conventions and styles from the program's source
+comprehend and maintain in the software development~\cite{ML}, it may adhere to
+different conventions and styles from the program's source
 code~\cite{Kapfhammer2004,Kapfhammer2010}. This means that the detection
 thresholds of Table~\ref{tab:metrics-and-thresholds}, which are mainly designed
 for a program's source code, may not be ideal for the test code. To mitigate
