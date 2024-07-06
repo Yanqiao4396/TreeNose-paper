@@ -122,9 +122,24 @@ The authors then discussed their independent classifications until a consensus
 emerged as to whether the detected code smells were valid or
 not~\cite{Cruzes2011}.
 %
+We designated a \textit{True Positive} for \texttt{TreeNose} when both the
+authors and \texttt{TreeNose} classified the randomly selected code as a smell;
+and a \textit{False Positive} for \texttt{TreeNose} when we did not classify it
+as a code smell and the presented tool did.
+%
+When \texttt{TreeNose} was the baseline, we designated a \textit{False
+Negative} for the language-specific detector the developers but not by
+\texttt{TreeNose}.
+%
 At this step in the manual annotation study, we calculated the precision for
 both \texttt{TreeNose} and the language-specific detector and both recall and
 the F1 score for the language-specific detector.
+
+% With those metrics, we calculated the precision, recall, and
+% F1 score of \texttt{TreeNose}. Then, we conducted the same study with the
+% samples from \texttt{TreeNose} to calculate the F1 score of the other tools.
+% Finally, we utilized the F1 scores of \texttt{TreeNose} and the other tools to
+% compare their performances.
 
 % We, furthermore, conducted such a study with 2 internal developers to manually
 % verify code smells. Specifically, we built two spreadsheets for the study. One
@@ -142,16 +157,8 @@ the F1 score for the language-specific detector.
 By this approach, we can compare the decisions between the \texttt{TreeNose}
 and us, where both can potentially agree or disagree with the other detectors.
 
-We defined the True Positive of \texttt{TreeNose} as the number of code smells
-that are detected by both \texttt{TreeNose} and us among the samples selected
-from the other tools, the False Positive as the number of code smells that are
-detected by \texttt{TreeNose} but not by us, and the False Negative as the
-number of code smells that are detected by the developers but not by
-\texttt{TreeNose}. With those metrics, we calculated the precision, recall, and
-F1 score of \texttt{TreeNose}. Then, we conducted the same study with the
-samples from \texttt{TreeNose} to calculate the F1 score of the other tools.
-Finally, we utilized the F1 scores of \texttt{TreeNose} and the other tools to
-compare their performances. It's noteworthy that not all code smells detected
+
+It's noteworthy that not all code smells detected
 by \texttt{TreeNose} are detected by the other tools. For those code smells, we
 skipped them in the calculation of the F1 score of \texttt{TreeNose} because
 there is no detection results from the other tools, and tagged them as not
