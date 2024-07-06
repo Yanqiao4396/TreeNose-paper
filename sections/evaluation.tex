@@ -296,15 +296,23 @@ With that said, the discrepancy score has a range of negative infinity to 1,
 where 1 means the code smell doesn't occur in the language at all and 0 means
 the code smell occurs in the language as frequently as the other languages.
 
-{\bf Threats to Validity}. The definition of code smell, code that is hard to
-subjective, which is one of the main concerns in this research.
-We noted that various code smell detection tools
-utilize different metrics and thresholds to detect the same code smell.
-Therefore, the metrics of \texttt{TreeNose} may not be consistent with the
-other tools. Similarly, the selection of metrics and thresholds in
-\texttt{TreeNose} may not be optimal for detecting selected code smells. To
-mitigate the threats, we conducted an annotation study with 2 internal authors to
-evaluate the performance of \texttt{TreeNose} in detecting code smells.
+{\bf Threats to Validity}.
+%
+Although it is investigated by numerous prior empirical studies, the concept of
+a code smell is inherently subjective~\cite{Fowler_Beck}.
+%
+For instance, we noted that various code smell detection tools use different
+metrics and thresholds to detect the same code smell. Thus, the metrics and
+thresholds for \texttt{TreeNose}, given in
+Table~\ref{tab:metrics-and-thresholds}, may not align with the other tools and
+may not be ideal for detecting code smells in the chosen projects.
+%
+% Similarly, the selection of metrics and thresholds in \texttt{TreeNose} may
+% not be ideal for detecting selected code smells.
+%
+To mitigate these threats, this paper's authors performed a manual annotation
+study to evaluate \texttt{TreeNose}'s effectiveness at automatically detecting
+code smells.
 
 % Remove the sentence cuz it's redundant with the end of last paragraph
 % """Another threat is related to the annotation study. To evaluate the
