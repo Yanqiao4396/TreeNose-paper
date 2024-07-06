@@ -213,15 +213,15 @@ Tables~\ref{tab:percentage_table} and~\ref{tab:occurrence_table}.
 % between the equation and the RQ2
 
 We calculated the distribution of each code smell, denoted $P_{s}$, with the
-percentage formula in the Equation~\ref{eq:percentage}. To minimize the bias
+percentage formula given by Equation~\ref{eq:percentage}. To minimize the bias
 introduced by the different project sizes, the percentage of the code smell in
 each project was calculated and then averaged for the projects in that language.
 %
 We divided the number of each code smell in a project ($m_{k}$) by the number of
 all kinds of code smells in that project ({$M_{k}$}) to calculate the
-project-level percentage. Then we took the sum of the project-level percentages
-and divided the sum by the number of the projects in the language ($k$) to
-calculate $P_{s}$. The results associated with these percentages are shown in
+project-level percentage. We then took the sum of the project-level percentages
+and divided it by the number of the projects in the language ($k$) to calculate
+$P_{s}$. The results associated with these percentages are shown in
 Table~\ref{tab:percentage_table}.
 
 % \vspace{-0.5em}
@@ -240,14 +240,14 @@ P_{s} = \left( \sum_{1}^{k}\frac{{m_{k}}}{M_{k}} \right) \div {k} \times 100\%
 % average of the occurrences in the projects in the language, we calculate the
 % prevalence of the code smell in the language as follows:
 
-As for the RQ3, we quantified the prevalence of a code smell as the average
-occurrence of the code smell in each 1000 lines of code ($C_{s}$) shown in the
-Equation~\ref{eq:prevalence}. Within this equation, we divided the number of a
-code smell in one project ($m_{k}$) by the total number of lines in the project
-($N_{k}$) to calculate the project-level occurrence of the code smell, and then
-calculate language-level occurrence score ($C_{s}$) by averaging the
-project-level occurrences in the projects in the language and multiplying the
-result by 1000.
+To answer RQ3, we quantified the prevalence of a code smell as the average
+occurrence of the code smell in each 1000 lines of code, denoted as $C_{s}$ and
+shown in Equation~\ref{eq:prevalence}. To compute this evaluation metric, we
+divided the count of a code smell in one project ($m_{k}$) by the total number
+of lines in the project ($N_{k}$), thereby giving the project-level occurrence
+of the code smell, and then calculate the language-level occurrence score
+($C_{s}$) by averaging the project-level occurrences in the projects in the
+language and multiplying the result by 1000.
 
 % \vspace{-0.5em}
 
@@ -263,13 +263,16 @@ C_{s} = \left( \sum_{1}^{k}{\frac{m_{k}}{N_{k}}} \right) \div k \times 1000
 % programming languages ($C_{O}$). We calculate the occurrence discrepancy score
 % (D) of each code smell in the projects as follows:
 
-With the occurrence score $C_{s}$, we used the discrepancy formula shown in
-the Equation~\ref{eq:discrepancy} to quantify performance differences between
-the selected programming languages in the RQ3. We calculated the difference with
-the occurrence of a code smell in one language ($C_{s}$) minus the same code
-smell in the combination of the other languages ($C_{O}$), and calculated the
-occurrence discrepancy score (D) by dividing $C_{O}$. The results associated
-with discrepancy scores are shown in Table~\ref{tab:occurrence_table}.
+Leveraging the code smell occurrence score $C_{s}$ from
+Equation~\ref{eq:prevalence}, we calculated the discrepancy formula shown in the
+Equation~\ref{eq:discrepancy} to quantify the performance differences between
+the selected programming languages and thereby answer RQ3.
+%
+We calculated the difference with the occurrence of a code smell in one language
+($C_{s}$) minus the same code smell in the combination of the other languages
+($C_{O}$), and calculated the occurrence discrepancy score (D) by dividing
+$C_{O}$. The results associated with these discrepancy scores are shown in
+Table~\ref{tab:occurrence_table}.
 
 % \vspace{-1.0em}
 
